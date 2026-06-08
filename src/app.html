@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="currentColor" />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/blog/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/atom.xml" />
+    <link rel="alternate" type="application/json" title="JSON Feed" href="/blog/feed.json" />
+
+    <script>
+      try {
+        const preference = JSON.parse(localStorage.getItem('immich-ui-theme'));
+        const prefersDark = globalThis.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (preference === 'light' || (preference !== 'dark' && !prefersDark)) {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+      } catch {
+        // noop
+      }
+    </script>
+
+    %sveltekit.head%
+  </head>
+
+  <body data-sveltekit-preload-data="hover" class="bg-light text-dark">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
+</html>
