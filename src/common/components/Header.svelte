@@ -1,19 +1,9 @@
 <script lang="ts">
   import { page } from '$app/state';
   import type { HeaderItem } from '$common/types';
-  import {
-    Button,
-    commandPaletteManager,
-    CommandPaletteButton,
-    HStack,
-    Icon,
-    IconButton,
-    isExternalLink,
-    Logo,
-    Text,
-    ThemeSwitcher,
-  } from '@immich/ui';
-  import { mdiMagnify, mdiMenu, mdiOpenInNew } from '@mdi/js';
+  import Logo from '$lib/components/Logo.svelte';
+  import { Button, HStack, Icon, IconButton, isExternalLink, ThemeSwitcher } from '@immich/ui';
+  import { mdiMenu, mdiOpenInNew } from '@mdi/js';
 
   type Props = {
     items?: HeaderItem[];
@@ -42,7 +32,7 @@
     {/if}
     <a href="/" class="flex gap-2 text-4xl">
       <Logo variant="inline" class="hidden sm:block" />
-      <Logo variant="logo" class="sm:hidden" />
+      <Logo variant="mark" class="sm:hidden" />
     </a>
   </div>
 
@@ -58,7 +48,6 @@
         color={item.color ?? (isActive(item.href) ? 'primary' : 'secondary')}>{item.title}</Button
       >
     {/each}
-    <CommandPaletteButton />
     <ThemeSwitcher />
   </HStack>
 </nav>

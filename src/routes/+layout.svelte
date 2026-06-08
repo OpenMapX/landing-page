@@ -1,165 +1,44 @@
 <script lang="ts">
-  import { afterNavigate, beforeNavigate } from '$app/navigation';
-  import { page } from '$app/state';
-  import PageContent from '$common/components/PageContent.svelte';
-  import { getBlogProvider, posts } from '$lib';
+  import { afterNavigate } from '$app/navigation';
+  import Header from '$common/components/Header.svelte';
+  import { navItems } from '$lib/nav';
+  import { siteMetadata } from '$lib';
+  import { Link, SiteMetadata, Text, TooltipProvider } from '@immich/ui';
+  import { Sites, Socials } from '$lib/constants';
+  import Logo from '$lib/components/Logo.svelte';
   import '$lib/app.css';
-  import {
-    AnnouncementBanner,
-    AppShell,
-    AppShellHeader,
-    AppShellSidebar,
-    Button,
-    CommandPaletteButton,
-    commandPaletteManager,
-    CommandPaletteProvider,
-    Constants,
-    getSiteProviders,
-    IconButton,
-    Link,
-    Logo,
-    NavbarItem,
-    ScreencastOverlay,
-    Text,
-    ThemeSwitcher,
-    TooltipProvider,
-  } from '@immich/ui';
-  import {
-    mdiChartGantt,
-    mdiDownload,
-    mdiMenu,
-    mdiOpenInNew,
-    mdiPostOutline,
-    mdiScriptTextOutline,
-    mdiShoppingOutline,
-  } from '@mdi/js';
-  import { siGithub } from 'simple-icons';
-  import { onMount, type Snippet } from 'svelte';
-  import { MediaQuery } from 'svelte/reactivity';
+  import type { Snippet } from 'svelte';
 
-  type Props = {
-    children?: Snippet;
-    center?: boolean;
-  };
+  let { children }: { children?: Snippet } = $props();
 
-  const { children }: Props = $props();
-
-  let pathname = '';
-  onMount(() => {
-    pathname = page.url.pathname;
-  });
-
-  beforeNavigate(() => {
-    const newPathname = $state.snapshot(page.url.pathname);
-    pathname = newPathname;
-  });
-
-  afterNavigate(() => {
-    const newPathname = $state.snapshot(page.url.pathname);
-    if (pathname === newPathname) {
-      return;
-    }
-    window.scrollTo({ top: 0, behavior: 'auto' });
-  });
-
-  const sidebar = new MediaQuery(`max-width: 850px`);
-  let isMobile = $derived(sidebar.current);
-  let isOpen = $state(false);
-  let open = $derived(isMobile && isOpen);
-
-  beforeNavigate(() => {
-    isOpen = false;
-  });
-
-  const withActiveColor = (path: string) => {
-    const active = path === page.url.pathname || page.url.pathname.startsWith(path);
-    return active ? 'primary' : 'secondary';
-  };
-
-  commandPaletteManager.enable();
-
-  const featuredPost = posts.find((post) => post.featured);
+  afterNavigate(() => window.scrollTo({ top: 0, behavior: 'auto' }));
 </script>
 
-<CommandPaletteProvider providers={[getBlogProvider(), ...getSiteProviders()]} />
-
-<ScreencastOverlay />
+<SiteMetadata site={siteMetadata} />
 
 <TooltipProvider>
-  <AppShell>
-    <AppShellHeader>
-      <div class="w-full">
-        {#if !page.url.pathname.startsWith('/blog') && featuredPost}
-          <AnnouncementBanner until={featuredPost.publishedAt.plus({ week: 1 })}>
-            {#snippet content()}
-              <div class="flex items-center justify-center gap-1">
-                Read our latest post:
-                <Text color="primary">
-                  <Link href={featuredPost.url}>{featuredPost.title}</Link>
-                </Text>
-              </div>
-            {/snippet}
-          </AnnouncementBanner>
-        {/if}
-        <nav class="flex grid-cols-[1fr_auto_1fr] justify-between p-2 lg:grid lg:gap-2">
-          <div class="flex place-items-center gap-2">
-            <IconButton
-              shape="round"
-              color="secondary"
-              variant="ghost"
-              size="medium"
-              aria-label="Main menu"
-              icon={mdiMenu}
-              onclick={() => (isOpen = !isOpen)}
-              class="md:hidden"
-            />
-            <a href="/" class="flex gap-2 text-4xl">
-              <Logo variant="inline" class="hidden sm:block" />
-              <Logo variant="logo" class="sm:hidden" />
-            </a>
-          </div>
+<div class="mx-auto flex min-h-screen w-full max-w-(--breakpoint-xl) flex-col px-4">
+  <header class="sticky top-0 z-50 backdrop-blur">
+    <Header items={navItems} />
+  </header>
 
-          <div class="hidden place-items-center gap-1 lg:flex">
-            <Button href="/blog" variant="ghost" color={withActiveColor('/blog')}>Blog</Button>
-            <Button href="/roadmap" variant="ghost" color={withActiveColor('/roadmap')}>Roadmap</Button>
-            <Button trailingIcon={mdiOpenInNew} href={Constants.Sites.Store} color="secondary" variant="ghost">
-              Merch
-            </Button>
-            <Button trailingIcon={mdiOpenInNew} href={Constants.Sites.Docs} color="secondary" variant="ghost">
-              Docs
-            </Button>
-            <Button
-              leadingIcon={siGithub.path}
-              trailingIcon={mdiOpenInNew}
-              href={Constants.Socials.Github}
-              color="secondary"
-              variant="ghost"
-            >
-              GitHub
-            </Button>
-          </div>
-          <div class="flex place-items-center justify-end gap-2">
-            <Button href={Constants.Sites.Buy} color="primary" size="small">Buy Immich</Button>
-            <CommandPaletteButton />
-            <ThemeSwitcher />
-          </div>
-        </nav>
-      </div>
-    </AppShellHeader>
+  <main class="flex-1">
+    {@render children?.()}
+  </main>
 
-    <AppShellSidebar bind:open>
-      <div class="my-4 me-4">
-        <NavbarItem title="Documentation" href={Constants.Sites.Docs} icon={mdiScriptTextOutline} />
-        <NavbarItem title="Blog" href="/blog" icon={mdiPostOutline} />
-        <NavbarItem title="Roadmap" href="/roadmap" icon={mdiChartGantt} />
-        <NavbarItem title="Download" href="/download" icon={mdiDownload} />
-        <NavbarItem title="Merch" href={Constants.Sites.Store} icon={mdiShoppingOutline} />
-        <NavbarItem title="Github" href={Constants.Socials.Github} icon={siGithub.path} />
-      </div>
-    </AppShellSidebar>
-
-    <PageContent class="mx-auto w-full max-w-(--breakpoint-lg)">
-      {@render children?.()}
-    </PageContent>
-  </AppShell>
+  <footer class="mt-16 flex flex-col items-center gap-4 border-t py-10">
+    <Logo variant="inline" />
+    <div class="flex flex-wrap justify-center gap-4">
+      <Link href="/features">Features</Link>
+      <Link href="/download">Download</Link>
+      <Link href="/roadmap">Roadmap</Link>
+      <Link href="/blog">Blog</Link>
+      <Link href="/privacy-policy">Privacy</Link>
+      <!-- terms link added in blog/legal unit -->
+      <Link href={Socials.Github}>GitHub</Link>
+      <Link href={Sites.App}>Open the app</Link>
+    </div>
+    <Text size="small" class="text-muted">© OpenMapX · Open-data maps</Text>
+  </footer>
+</div>
 </TooltipProvider>
