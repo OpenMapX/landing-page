@@ -26,7 +26,7 @@ Welcome to the release `v2.3.0` of Immich. This version comes with enhancements
 
 The asset viewer in the mobile app now includes an "Add to" button that lets you quickly add an asset to an album, the locked folder, or the archive. Thanks @happychriss!
 
-![Tapping the "Add to" button presents a menu to add/move an asset](https://static.immich.cloud/blog/798e74f4-a2ef-40d9-915f-6452d4162723/26ccc102d4a8c979f7a272f5ad00c4b7.webp)
+![Tapping the 'Add to' button presents a menu to add/move an asset](https://static.immich.cloud/blog/798e74f4-a2ef-40d9-915f-6452d4162723/26ccc102d4a8c979f7a272f5ad00c4b7.webp)
 
 ### OCR Improvement
 
