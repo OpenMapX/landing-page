@@ -3,7 +3,8 @@
 @layer base {
   :root {
     /* light */
-    --immich-primary: 66 80 175;
+    /* OpenMapX brand primary — #1313D4. Change this one line to retheme. */
+    --immich-primary: 19 19 212;
   }
 }
 
