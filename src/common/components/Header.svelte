@@ -2,34 +2,21 @@
   import { page } from '$app/state';
   import type { HeaderItem } from '$common/types';
   import Logo from '$lib/components/Logo.svelte';
-  import { Button, HStack, Icon, IconButton, isExternalLink, ThemeSwitcher } from '@immich/ui';
-  import { mdiMenu, mdiOpenInNew } from '@mdi/js';
+  import { Button, HStack, isExternalLink, ThemeSwitcher } from '@immich/ui';
+  import { mdiOpenInNew } from '@mdi/js';
 
   type Props = {
     items?: HeaderItem[];
-    onToggleSidebar?: () => void;
   };
 
   const isActive = (path: string, options?: { prefix?: boolean }) =>
     path === page.url.pathname || (options?.prefix && page.url.pathname.startsWith(path));
 
-  let { items = [], onToggleSidebar }: Props = $props();
+  let { items = [] }: Props = $props();
 </script>
 
 <nav class="flex w-full items-center justify-between p-2 md:gap-2">
   <div class="flex place-items-center gap-2">
-    {#if onToggleSidebar}
-      <IconButton
-        shape="round"
-        color="secondary"
-        variant="ghost"
-        size="medium"
-        aria-label="Main menu"
-        icon={mdiMenu}
-        onclick={() => onToggleSidebar()}
-        class="md:hidden"
-      />
-    {/if}
     <a href="/" class="flex gap-2 text-4xl">
       <Logo variant="inline" class="hidden sm:block" />
       <Logo variant="mark" class="sm:hidden" />
