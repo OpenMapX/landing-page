@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/google-sans-flex/index.css';
 @import '@immich/ui/theme/default.css';
 @import '$common/theme/theme.css';
 @source '../../node_modules/@immich/ui/dist';
