@@ -11,4 +11,4 @@ OpenMapX is a fast, privacy-respecting map built entirely on open data: search, 
 public transit, shared mobility and street-level imagery on one map — ad-free and self-hostable.
 
 Open the map at [openmapx.com](https://openmapx.com), or star the project on
-[GitHub](https://github.com/OpenMapX).
+[GitHub](https://github.com/OpenMapX/openmapx).

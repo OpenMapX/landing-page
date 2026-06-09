@@ -9,6 +9,6 @@ export const Socials = {
 };
 
 export const SelfHost = {
-  Repo: 'https://github.com/OpenMapX',
+  Repo: 'https://github.com/OpenMapX/openmapx',
   Compose: 'https://github.com/OpenMapX/openmapx#self-hosting',
 };
