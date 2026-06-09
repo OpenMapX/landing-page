@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@fontsource-variable/inter':
-        specifier: ^5.2.8
-        version: 5.2.8
+      '@fontsource-variable/google-sans-flex':
+        specifier: ^5.2.3
+        version: 5.2.3
       '@immich/ui':
         specifier: ^0.80.0
         version: 0.80.0(@sveltejs/kit@2.63.0(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.3)(vite@8.0.16(@types/node@24.13.1)(jiti@2.7.0)))(svelte@5.56.3)(typescript@6.0.3)(vite@8.0.16(@types/node@24.13.1)(jiti@2.7.0)))(svelte@5.56.3)(tailwindcss@4.3.0)
@@ -93,8 +93,8 @@ packages:
   '@floating-ui/utils@0.2.11':
     resolution: {integrity: sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==}
 
-  '@fontsource-variable/inter@5.2.8':
-    resolution: {integrity: sha512-kOfP2D+ykbcX/P3IFnokOhVRNoTozo5/JxhAIVYLpea/UBmCQ/YWPBfWIDuBImXX/15KH+eKh4xpEUyS2sQQGQ==}
+  '@fontsource-variable/google-sans-flex@5.2.3':
+    resolution: {integrity: sha512-g5z9WANJW56gZTWJvu7mIHOiHJaffkk/dhOKqEiK4Nxnsk8lnGnijvGt4vF4KD2KWzscXBOB9XR2sfvTPSi5hA==}
 
   '@immich/svelte-markdown-preprocess@0.5.1':
     resolution: {integrity: sha512-ssv95kPH9LlyYURYiGDLyytBubhnMyYtfcMO2WLnWYIKNHmSqk/4SFvgt8TyZ5Ny/wrF6+tn+kaV63XJbbVhMQ==}
@@ -976,7 +976,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.11': {}
 
-  '@fontsource-variable/inter@5.2.8': {}
+  '@fontsource-variable/google-sans-flex@5.2.3': {}
 
   '@immich/svelte-markdown-preprocess@0.5.1(svelte@5.56.3)':
     dependencies:
