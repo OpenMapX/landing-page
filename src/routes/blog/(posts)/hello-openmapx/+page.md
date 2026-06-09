@@ -4,6 +4,7 @@ title: Introducing OpenMapX
 description: An open-data, privacy-respecting alternative to Google Maps.
 publishedAt: 2026-06-09
 authors: [OpenMapX]
+featured: true
 ---
 
 OpenMapX is a fast, privacy-respecting map built entirely on open data: search, directions,

@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Container, Scrollable, SiteFooter, type Size } from '@immich/ui';
+  import Footer from '$lib/components/Footer.svelte';
+  import { Container, Scrollable, type Size } from '@immich/ui';
   import type { Snippet } from 'svelte';
 
   type Props = {
@@ -18,6 +19,6 @@
         {@render children?.()}
       </Container>
     </div>
-    <SiteFooter />
+    <Footer />
   </section>
 </Scrollable>

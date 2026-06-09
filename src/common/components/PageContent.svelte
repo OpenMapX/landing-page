@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { SiteFooter } from '@immich/ui';
+  import Footer from '$lib/components/Footer.svelte';
   import type { Snippet } from 'svelte';
 
   type Props = {
@@ -16,5 +16,5 @@
       {@render children?.()}
     </div>
   </div>
-  <SiteFooter />
+  <Footer />
 </div>

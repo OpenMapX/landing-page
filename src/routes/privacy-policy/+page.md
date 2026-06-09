@@ -1,11 +1,9 @@
 ---
 layout: PrivacyPolicyPage
 title: Privacy Policy
+description: How the OpenMapX marketing website handles your data.
+updatedAt: 2026-06-09
 ---
-
-# Privacy Policy
-
-_Last updated: 2026-06-09_
 
 This policy covers the OpenMapX marketing website at **openmapx.org**. The OpenMapX
 application (openmapx.com) has its own in-app privacy notice.
