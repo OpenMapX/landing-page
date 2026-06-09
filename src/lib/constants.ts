@@ -1,7 +1,7 @@
 export const Sites = {
   App: 'https://openmapx.com',
   Landing: 'https://openmapx.org',
-  Docs: 'https://openmapx.com/docs',
+  Docs: 'https://docs.openmapx.org',
 };
 
 export const Socials = {
@@ -10,5 +10,5 @@ export const Socials = {
 
 export const SelfHost = {
   Repo: 'https://github.com/OpenMapX/openmapx',
-  Compose: 'https://github.com/OpenMapX/openmapx#self-hosting',
+  Compose: 'https://docs.openmapx.org/install/getting-started/',
 };
