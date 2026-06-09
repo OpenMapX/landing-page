@@ -7,17 +7,17 @@
     number: number;
   };
 
-  let { org = 'immich-app', repo = 'immich', number }: Props = $props();
+  let { org = 'OpenMapX', repo = 'openmapx', number }: Props = $props();
 
   const getLink = (org: string, repo: string, number: number) => {
     const href = `https://github.com/${org}/${repo}/issues/${number}`;
     let text = `#${number}`;
 
-    if (repo !== 'immich') {
+    if (repo !== 'openmapx') {
       text = `${repo}#${number}`;
     }
 
-    if (org !== 'immich-app') {
+    if (org !== 'OpenMapX') {
       text = `${org}/${repo}#${number}`;
     }
 

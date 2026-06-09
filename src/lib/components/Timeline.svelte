@@ -45,7 +45,7 @@
             <!-- header -->
             <div class="flex w-full justify-between gap-2">
               <div class="flex items-center gap-2">
-                {#if cardIcon === 'immich'}
+                {#if cardIcon === 'openmapx'}
                   <Logo variant="icon" class="h-6" />
                 {:else}
                   <Icon icon={cardIcon} class={item.iconClass ?? 'text-primary'} />

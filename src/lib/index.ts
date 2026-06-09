@@ -10,8 +10,8 @@ export const siteMetadata = {
 };
 
 export const blogMetadata = {
-  title: 'Immich Blog',
-  description: 'Latest updates, announcements, and stories from the Immich team.',
+  title: 'OpenMapX Blog',
+  description: 'News and updates from OpenMapX.',
 };
 
 export type TimelineItem = {

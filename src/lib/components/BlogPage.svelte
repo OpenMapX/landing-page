@@ -63,7 +63,7 @@
 
 {@render children?.()}
 
-<Text class="mt-4">Cheers,<br />The Immich Team</Text>
+<Text class="mt-4">The OpenMapX Team</Text>
 
 {#if postScript}
   <Markdown.LineBreak />
