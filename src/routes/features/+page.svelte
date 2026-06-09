@@ -1,41 +1,92 @@
 <script lang="ts">
-  import { Heading, Icon, SiteMetadata, Text } from '@immich/ui';
-  import {
-    mdiMapSearchOutline, mdiBusMultiple, mdiCarOutline, mdiEvStation,
-    mdiParking, mdiBikeFast, mdiImageMultipleOutline, mdiWifiOff, mdiTranslate, mdiShieldLockOutline,
-  } from '@mdi/js';
   import { siteMetadata } from '$lib';
+  import {
+    Card,
+    CardBody,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+    Heading,
+    Icon,
+    SiteMetadata,
+    Stack,
+    Text,
+  } from '@immich/ui';
+  import {
+    mdiBikeFast,
+    mdiBusMultiple,
+    mdiCarOutline,
+    mdiCompassOutline,
+    mdiDirections,
+    mdiEvStation,
+    mdiImageMultipleOutline,
+    mdiLayersOutline,
+    mdiMagnifyExpand,
+    mdiMapMarkerOutline,
+    mdiMapSearchOutline,
+    mdiNavigationVariantOutline,
+    mdiParking,
+    mdiServerNetworkOutline,
+    mdiShieldLockOutline,
+    mdiStarOutline,
+    mdiTranslate,
+    mdiWifiOff,
+  } from '@mdi/js';
 
-  const features = [
-    { icon: mdiMapSearchOutline, title: 'Search & places', body: 'Geocoding and autocomplete across open datasets, with rich place panels, hours, photos and reviews.' },
-    { icon: mdiBusMultiple, title: 'Public transit', body: 'Real-time, multi-modal routing across thousands of agencies via MOTIS and open GTFS feeds.' },
-    { icon: mdiCarOutline, title: 'Directions & live nav', body: 'Driving, cycling and walking routes with turn-by-turn navigation and automatic rerouting.' },
-    { icon: mdiEvStation, title: 'EV charging', body: 'Live charge-point availability from OpenChargeMap and OpenStreetMap.' },
-    { icon: mdiParking, title: 'Parking', body: 'On- and off-street parking with availability where data exists.' },
-    { icon: mdiBikeFast, title: 'Shared mobility', body: 'Bike-, car- and scooter-sharing from GBFS and TOMP providers on one map.' },
-    { icon: mdiImageMultipleOutline, title: 'Street-level imagery', body: 'Explore at eye level with open Mapillary imagery.' },
-    { icon: mdiWifiOff, title: 'Offline & PWA', body: 'Install to your device and keep maps working without a connection.' },
-    { icon: mdiTranslate, title: 'Multilingual', body: 'Fully localized UI and map labels (English and German today).' },
-    { icon: mdiShieldLockOutline, title: 'Privacy & open data', body: 'No ad tracking. Built on open data and self-hostable end to end.' },
+  type Feature = {
+    icon: string;
+    title: string;
+    description: string;
+  };
+
+  const features: Feature[] = [
+    { title: 'Search & places', description: 'Geocoding and autocomplete across open datasets, without the tracking.', icon: mdiMapSearchOutline },
+    { title: 'Place details', description: 'Rich place panels with hours, photos, contact info and more.', icon: mdiMapMarkerOutline },
+    { title: 'Public transit', description: 'Real-time, multi-modal routing across thousands of agencies via MOTIS and open GTFS feeds.', icon: mdiBusMultiple },
+    { title: 'Directions', description: 'Driving, cycling and walking routes powered by OSRM and Valhalla.', icon: mdiDirections },
+    { title: 'Live navigation', description: 'Turn-by-turn guidance with automatic rerouting when you go off-route.', icon: mdiNavigationVariantOutline },
+    { title: 'EV charging', description: 'Live charge-point availability from OpenChargeMap and OpenStreetMap.', icon: mdiEvStation },
+    { title: 'Parking', description: 'On- and off-street parking with availability where data exists.', icon: mdiParking },
+    { title: 'Bike & scooter sharing', description: 'GBFS micromobility — bikes and scooters — on the map.', icon: mdiBikeFast },
+    { title: 'Car sharing', description: 'Shared cars from TOMP and GBFS providers in one place.', icon: mdiCarOutline },
+    { title: 'Street-level imagery', description: 'Explore at eye level with open Mapillary imagery.', icon: mdiImageMultipleOutline },
+    { title: 'Map layers', description: 'Satellite, terrain, traffic and transit overlays at a click.', icon: mdiLayersOutline },
+    { title: 'Explore nearby', description: 'Discover what is around you, Google-Maps style.', icon: mdiCompassOutline },
+    { title: 'Reviews', description: 'Open, signed and portable reviews via Mangrove.', icon: mdiStarOutline },
+    { title: 'Offline & PWA', description: 'Install to your device and keep maps working without a connection.', icon: mdiWifiOff },
+    { title: 'Multilingual', description: 'Fully localized UI and map labels (English and German today).', icon: mdiTranslate },
+    { title: 'Natural-language search', description: 'Ask for places in plain language (coming soon).', icon: mdiMagnifyExpand },
+    { title: 'Privacy & open data', description: 'No ad tracking, no profiling — built entirely on open data.', icon: mdiShieldLockOutline },
+    { title: 'Self-hostable', description: 'Run the whole stack yourself with Docker and own your data.', icon: mdiServerNetworkOutline },
   ];
+
+  const pageMetadata = {
+    title: 'Features',
+    description: 'OpenMapX puts an entire mapping toolkit on one open-data map.',
+  };
 </script>
 
-<SiteMetadata
-  site={siteMetadata}
-  page={{ title: 'Features', description: 'Search, transit, directions, mobility, street view and more — on one open-data map.' }}
-/>
+<SiteMetadata site={siteMetadata} page={pageMetadata} />
 
-<section class="py-12">
-  <Heading size="title" tag="h1" fontWeight="extra-bold" class="text-center">Everything on one map</Heading>
-  <div class="mt-10 grid gap-6 sm:grid-cols-2">
-    {#each features as f (f.title)}
-      <div class="flex gap-4 rounded-xl border p-6">
-        <Icon icon={f.icon} class="text-primary size-8 shrink-0" />
-        <div>
-          <Heading size="small" tag="h2">{f.title}</Heading>
-          <Text class="text-muted mt-1">{f.body}</Text>
-        </div>
-      </div>
-    {/each}
-  </div>
-</section>
+<Stack gap={8}>
+  <Stack>
+    <Heading size="title" tag="h1">{pageMetadata.title}</Heading>
+    <Text>{pageMetadata.description}</Text>
+  </Stack>
+
+  <Stack gap={2}>
+    <section class="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {#each features as feature, i (i)}
+        <Card color="secondary" class="h-full">
+          <CardHeader>
+            <CardTitle>{feature.title}</CardTitle>
+            <CardDescription>{feature.description}</CardDescription>
+          </CardHeader>
+          <CardBody class="text-primary flex items-center justify-center align-middle">
+            <Icon icon={feature.icon} size="3rem" class="m-5" />
+          </CardBody>
+        </Card>
+      {/each}
+    </section>
+  </Stack>
+</Stack>
