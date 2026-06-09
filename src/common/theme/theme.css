@@ -1,10 +1,41 @@
 @custom-variant dark (&:where(.dark, .dark *):not(.light));
 
 @layer base {
-  :root {
-    /* light */
-    /* OpenMapX brand primary — #1313D4. Change this one line to retheme. */
-    --immich-primary: 19 19 212;
+  /*
+    OpenMapX brand primary — #1313D4 (hsl 240 84% 45%).
+    @immich/ui derives every `primary` utility from the `--immich-ui-primary-*`
+    scale (`--color-primary` = `--immich-ui-primary-500`), so we override the
+    whole scale here, not the legacy `--immich-primary` var. To retheme, change
+    the hue/lightness below (500 is the exact brand color).
+  */
+  :root,
+  .light {
+    --immich-ui-primary-50: hsl(240 84% 97%);
+    --immich-ui-primary-100: hsl(240 84% 94%);
+    --immich-ui-primary-200: hsl(240 84% 88%);
+    --immich-ui-primary-300: hsl(240 84% 78%);
+    --immich-ui-primary-400: hsl(240 84% 63%);
+    --immich-ui-primary-500: #1313d4;
+    --immich-ui-primary-600: hsl(240 84% 40%);
+    --immich-ui-primary-700: hsl(240 82% 34%);
+    --immich-ui-primary-800: hsl(240 80% 28%);
+    --immich-ui-primary-900: hsl(240 76% 22%);
+    --immich-ui-primary-950: hsl(240 72% 15%);
+  }
+
+  .dark {
+    /* lighter tints of the same hue so the brand stays legible on dark surfaces */
+    --immich-ui-primary-50: hsl(240 60% 16%);
+    --immich-ui-primary-100: hsl(240 62% 22%);
+    --immich-ui-primary-200: hsl(240 66% 30%);
+    --immich-ui-primary-300: hsl(240 72% 42%);
+    --immich-ui-primary-400: hsl(240 82% 58%);
+    --immich-ui-primary-500: hsl(240 90% 70%);
+    --immich-ui-primary-600: hsl(240 92% 77%);
+    --immich-ui-primary-700: hsl(240 92% 83%);
+    --immich-ui-primary-800: hsl(240 90% 89%);
+    --immich-ui-primary-900: hsl(240 88% 94%);
+    --immich-ui-primary-950: hsl(240 86% 97%);
   }
 }
 
