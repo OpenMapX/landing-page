@@ -1,0 +1,46 @@
+# Deploy compose for the OpenMapX landing page (openmapx.org).
+#
+# Runs as its OWN compose project, beside the staging instance in ~/openmapx.
+# It only *joins* the staging Traefik's network (docker_openmapx) so Traefik can
+# route to it — nothing in ~/openmapx is changed. Traefik discovers this
+# container via the labels below and issues the openmapx.org cert automatically.
+#
+# Legal/operator details are baked in at BUILD time from .env (see README +
+# .env.example). Rebuild (`docker compose up -d --build`) to change them.
+services:
+  landing:
+    build: .
+    image: openmapx-landing
+    container_name: openmapx-landing
+    restart: unless-stopped
+    networks: [openmapx]
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: docker_openmapx
+      # apex openmapx.org -> serve the landing
+      traefik.http.routers.openmapx-landing.rule: "Host(`openmapx.org`)"
+      traefik.http.routers.openmapx-landing.entrypoints: websecure
+      traefik.http.routers.openmapx-landing.tls.certresolver: letsencrypt
+      traefik.http.routers.openmapx-landing.service: openmapx-landing
+      traefik.http.services.openmapx-landing.loadbalancer.server.port: "80"
+      # www.openmapx.org -> apex (301, path-preserving). Its own cert.
+      # The redirect middleware fires before the service, but Traefik still
+      # requires a service on the router, so it reuses openmapx-landing.
+      traefik.http.routers.openmapx-landing-www.rule: "Host(`www.openmapx.org`)"
+      traefik.http.routers.openmapx-landing-www.entrypoints: websecure
+      traefik.http.routers.openmapx-landing-www.tls.certresolver: letsencrypt
+      traefik.http.routers.openmapx-landing-www.service: openmapx-landing
+      traefik.http.routers.openmapx-landing-www.middlewares: www-to-apex
+      traefik.http.middlewares.www-to-apex.redirectregex.regex: '^https?://www\.openmapx\.org/(.*)'
+      traefik.http.middlewares.www-to-apex.redirectregex.replacement: 'https://openmapx.org/$${1}'
+      traefik.http.middlewares.www-to-apex.redirectregex.permanent: "true"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:80/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+networks:
+  openmapx:
+    name: docker_openmapx
+    external: true
