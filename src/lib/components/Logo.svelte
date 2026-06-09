@@ -21,7 +21,9 @@
   <span class={className}>
     <span class="inline-flex items-center gap-2">
       <img src={mark} alt="" class="size-8" />
-      <span class="text-xl leading-none font-extrabold tracking-tight">OpenMapX</span>
+      <!-- nudge down ~2px: "OpenMapX" has 'p' descenders that pull the glyph-box
+           center below the visible cap band, so box-centering reads slightly high -->
+      <span class="text-xl leading-none font-extrabold tracking-tight translate-y-[2px]">OpenMapX</span>
     </span>
   </span>
 {/if}
