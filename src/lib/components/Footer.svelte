@@ -58,34 +58,44 @@
 
       <hr />
 
-      <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
-        <HStack gap={1}>
-          <Link href="/" underline={false} class="flex items-center gap-2">
-            <img src="/img/mark.png" alt="" class="size-6" />
-            <Text fontWeight="bold">OpenMapX</Text>
-          </Link>
-        </HStack>
+      <div class="flex flex-col gap-3">
+        <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <HStack gap={1}>
+            <Link href="/" underline={false} class="flex items-center gap-2">
+              <img src="/img/mark.png" alt="" class="size-6" />
+              <Text fontWeight="bold">OpenMapX</Text>
+            </Link>
+          </HStack>
 
-        <HStack gap={1}>
-          <IconButton
-            href={Socials.Github}
-            icon={siGithub}
-            aria-label="GitHub"
-            variant="ghost"
-            color="secondary"
-            size="small"
-          />
-          <IconButton
-            href="/blog/feed.xml"
-            icon={siRss}
-            aria-label="RSS feed"
-            variant="ghost"
-            color="secondary"
-            size="small"
-          />
-        </HStack>
+          <HStack gap={1}>
+            <IconButton
+              href={Socials.Github}
+              icon={siGithub}
+              aria-label="GitHub"
+              variant="ghost"
+              color="secondary"
+              size="small"
+            />
+            <IconButton
+              href="/blog/feed.xml"
+              icon={siRss}
+              aria-label="RSS feed"
+              variant="ghost"
+              color="secondary"
+              size="small"
+            />
+          </HStack>
 
-        <Text size="small" class="text-muted">© 2026 OpenMapX · Open-data maps</Text>
+          <Text size="small" class="text-muted">© 2026 OpenMapX · Open-data maps</Text>
+        </div>
+
+        <Text size="small" class="text-muted text-center">
+          Website design gratefully adapted from <Link
+            href="https://github.com/immich-app/static-pages"
+            target="_blank"
+            rel="noopener noreferrer">Immich</Link
+          > (MIT).
+        </Text>
       </div>
     </Stack>
   </div>
