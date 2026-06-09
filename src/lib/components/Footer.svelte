@@ -29,7 +29,7 @@
       ],
     },
     {
-      heading: 'Get OpenMapX',
+      heading: 'Use OpenMapX',
       links: [{ href: Sites.App, text: 'Open the map' }],
     },
   ];

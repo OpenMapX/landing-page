@@ -24,7 +24,7 @@
   } from '@mdi/js';
 
   const pageMetadata = {
-    title: 'Get OpenMapX',
+    title: 'Use OpenMapX',
     description: 'Use OpenMapX in your browser, install it as an app, or self-host the whole stack.',
   };
 </script>
