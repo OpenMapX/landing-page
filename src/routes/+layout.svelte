@@ -34,7 +34,7 @@
       <Link href="/roadmap">Roadmap</Link>
       <Link href="/blog">Blog</Link>
       <Link href="/privacy-policy">Privacy</Link>
-      <!-- terms link added in blog/legal unit -->
+      <Link href="/terms">Terms</Link>
       <Link href={Socials.Github}>GitHub</Link>
       <Link href={Sites.App}>Open the app</Link>
     </div>
