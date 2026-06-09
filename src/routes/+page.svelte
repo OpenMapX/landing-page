@@ -20,12 +20,11 @@
   <Logo variant="stacked" />
 
   <Heading size="title" tag="h1" fontWeight="extra-bold">
-    Open-data maps —<br class="hidden lg:block" />
-    <span class="text-primary">a Google Maps alternative</span>
+    Self-hostable maps, built on <span class="text-primary">open data &amp; open source</span>
   </Heading>
 
   <Text size="large">
-    OpenMapX brings search, directions, public transit, and street view together on one fast,<br
+    OpenMapX brings search, directions, public transit, and street-level imagery together on one fast,<br
       class="hidden lg:block"
     />
     privacy-respecting map — built entirely on open data, self-hostable, ad-free, and yours.

@@ -45,7 +45,7 @@
     {
       icon: mdiBusMultiple,
       title: 'Transit route options',
-      description: 'Google-Maps-style preferences, fewer-transfers / less-walking, and a Deutschlandticket filter.',
+      description: 'Preferences, fewer-transfers / less-walking, and a Deutschlandticket filter.',
       getDateLabel: onDate(2026, 6),
     },
     {
@@ -63,7 +63,7 @@
     {
       icon: mdiCompassOutline,
       title: 'Explore & nearby',
-      description: 'A unified, Google-Maps-style explore experience.',
+      description: 'A unified explore experience.',
       getDateLabel: onDate(2026, 5),
     },
     {
@@ -81,7 +81,7 @@
     {
       icon: mdiPalette,
       title: 'Custom map style',
-      description: 'A Google-Maps-like style for self-hosted vector tiles.',
+      description: 'A maps style you are used to for self-hosted vector tiles.',
       getDateLabel: onDate(2026, 3),
     },
     {

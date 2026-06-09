@@ -51,7 +51,7 @@
     { title: 'Car sharing', description: 'Shared cars from TOMP and GBFS providers in one place.', icon: mdiCarOutline },
     { title: 'Street-level imagery', description: 'Explore at eye level with open Mapillary imagery.', icon: mdiImageMultipleOutline },
     { title: 'Map layers', description: 'Satellite, terrain, traffic and transit overlays at a click.', icon: mdiLayersOutline },
-    { title: 'Explore nearby', description: 'Discover what is around you, Google-Maps style.', icon: mdiCompassOutline },
+    { title: 'Explore nearby', description: 'Discover what is around you.', icon: mdiCompassOutline },
     { title: 'Reviews', description: 'Open, signed and portable reviews via Mangrove.', icon: mdiStarOutline },
     { title: 'Offline & PWA', description: 'Install to your device and keep maps working without a connection.', icon: mdiWifiOff },
     { title: 'Multilingual', description: 'Fully localized UI and map labels (English and German today).', icon: mdiTranslate },

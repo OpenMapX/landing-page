@@ -6,6 +6,7 @@
   import Logo from '$lib/components/Logo.svelte';
   import { Sites, Socials } from '$lib/constants';
   import { getSiteProvider } from '$lib/siteCommands';
+  import '@fontsource-variable/inter';
   import '$lib/app.css';
   import {
     AnnouncementBanner,

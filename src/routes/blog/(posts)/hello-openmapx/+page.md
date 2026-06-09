@@ -1,7 +1,7 @@
 ---
 id: 019ea9b5-38e0-7379-af2c-886dab249706
 title: Introducing OpenMapX
-description: An open-data, privacy-respecting alternative to Google Maps.
+description: An open-data, privacy-respecting maps alternative.
 publishedAt: 2026-06-09
 authors: [OpenMapX]
 featured: true
