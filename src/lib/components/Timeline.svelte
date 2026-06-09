@@ -27,8 +27,11 @@
         <Checkbox checked={done} readonly shape="round" class="bg-subtle" />
       </div>
 
+      <!-- self-stretch (not h-full): the <li>'s height is content-based, so a
+           percentage height collapses to 0 and the connecting line disappears;
+           stretching to the flex cross-size gives the bar a real height to fill -->
       <div
-        class="-z-1 flex h-full w-[12px] translate-x-[-25px] flex-col items-center overflow-hidden"
+        class="-z-1 flex self-stretch w-[12px] translate-x-[-25px] flex-col items-center overflow-hidden"
         class:justify-end={isFirst}
       >
         <div
