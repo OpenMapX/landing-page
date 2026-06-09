@@ -103,9 +103,9 @@
               onclick={() => (isOpen = !isOpen)}
               class="md:hidden"
             />
-            <a href="/" class="flex gap-2 text-4xl">
-              <Logo variant="inline" class="hidden sm:block" />
-              <Logo variant="mark" class="sm:hidden" />
+            <a href="/" class="flex items-center gap-2">
+              <Logo variant="inline" class="hidden sm:inline-flex" />
+              <Logo variant="mark" class="size-8 sm:hidden" />
             </a>
           </div>
 
