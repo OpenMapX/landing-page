@@ -1,112 +1,51 @@
 <script lang="ts">
-  import { browser } from '$app/environment';
-  import qrCodeDark from '$common/img/app-qr-code-dark.svg';
-  import qrCodeLight from '$common/img/app-qr-code-light.svg';
-  import screenshotDark from '$common/img/screenshot-dark.webp';
-  import screenshotLight from '$common/img/screenshot-light.webp';
-  import { siteMetadata } from '$lib';
-  import {
-    appStoreBadge,
-    Button,
-    Constants,
-    Heading,
-    Icon,
-    Link,
-    Logo,
-    playStoreBadge,
-    SiteMetadata,
-    Text,
-    themeManager,
-    VStack,
-  } from '@immich/ui';
-  import { mdiKeyOutline, mdiOpenInNew, mdiShoppingOutline } from '@mdi/js';
-  import { siDiscord, siGithub, siWeblate } from 'simple-icons';
+  import { Button, Heading, Text } from '@immich/ui';
+  import { mdiMapSearchOutline, mdiOpenInNew } from '@mdi/js';
+  import { siGithub } from 'simple-icons';
+  import { Sites, Socials } from '$lib/constants';
+  import Logo from '$lib/components/Logo.svelte';
 
-  const supportItems = [
-    { href: Constants.Sites.Buy, text: 'Buy Immich', icon: mdiKeyOutline },
-    { href: Constants.Sites.Store, text: 'Buy Merch', icon: mdiShoppingOutline },
-    { href: Constants.Socials.Github, text: 'View on GitHub', icon: siGithub.path },
-    { href: Constants.Socials.Weblate, text: 'Translate on Weblate', icon: siWeblate.path },
+  const features = [
+    { title: 'Search & places', body: 'Geocoding, autocomplete, rich place details — without the tracking.' },
+    { title: 'Public transit', body: 'Real-time routing across thousands of agencies, powered by open data and MOTIS.' },
+    { title: 'Driving, cycling & walking', body: 'Turn-by-turn directions with live navigation and rerouting.' },
+    { title: 'Mobility', body: 'EV charging, parking, bike-, car- and scooter-sharing on one map.' },
+    { title: 'Street-level imagery', body: 'Explore at eye level with open Mapillary imagery.' },
+    { title: 'Offline & installable', body: 'Install as a PWA and keep your maps when you go offline.' },
   ];
 </script>
 
-<!-- only SSR SiteMetadata  -->
-<SiteMetadata site={siteMetadata} />
+<section class="flex flex-col items-center gap-8 py-12 text-center lg:py-20">
+  <Logo variant="stacked" />
 
-{#if browser}
-  <VStack gap={8} class="mt-4 text-center lg:mt-16">
-    <Logo size="giant" variant="stacked-futo" />
+  <Heading size="title" tag="h1" fontWeight="extra-bold">
+    Open-data maps —<br class="hidden lg:block" />
+    <span class="text-primary">a Google Maps alternative</span>
+  </Heading>
 
-    <Heading size="title" tag="h1" fontWeight="extra-bold">
-      Self-hosted <span class="text-primary">photo and<br class="hidden lg:block" /> video management</span> solution
-    </Heading>
+  <Text size="large" class="max-w-2xl">
+    OpenMapX brings search, directions, transit, and street view together on one fast, privacy-respecting map
+    built entirely on open data — self-hostable, ad-free, and yours.
+  </Text>
 
-    <Text size="large">
-      Easily back up, organize, and manage your photos on your own server. Immich helps you<br
-        class="hidden lg:block"
-      />
-      browse, search and organize your photos and videos with ease, without sacrificing your privacy.
-    </Text>
+  <div class="flex flex-col justify-center gap-4 sm:flex-row">
+    <Button size="large" href={Sites.App} leadingIcon={mdiMapSearchOutline}>Open the map</Button>
+    <Button size="large" color="secondary" href={Socials.Github} leadingIcon={siGithub.path} trailingIcon={mdiOpenInNew}>
+      View on GitHub
+    </Button>
+  </div>
 
-    <div class="flex flex-col gap-4">
-      <div class="flex flex-col justify-center gap-4 sm:flex-row">
-        <Button size="large" href="/download">Download</Button>
-        <Button size="large" href={Constants.Sites.Demo} color="secondary">
-          <span>Open Demo</span>
-          <Icon icon={mdiOpenInNew} />
-        </Button>
-      </div>
-      <div class="flex justify-center">
-        <Button href={Constants.Socials.Discord} size="large" variant="ghost" leadingIcon={siDiscord.path}>
-          Join our Discord
-        </Button>
-      </div>
+  <picture class="mt-6 w-full max-w-4xl">
+    <source srcset="/img/screenshot-dark.webp" media="(prefers-color-scheme: dark)" />
+    <img src="/img/screenshot-light.webp" alt="OpenMapX map preview" class="rounded-xl border shadow-xl" />
+  </picture>
+</section>
+
+<section class="grid gap-6 py-12 sm:grid-cols-2 lg:grid-cols-3">
+  {#each features as f (f.title)}
+    <div class="rounded-xl border p-6">
+      <Heading size="small" tag="h3">{f.title}</Heading>
+      <Text class="text-muted mt-2">{f.body}</Text>
     </div>
-
-    <div class="relative -z-10">
-      <img src={themeManager.value === 'dark' ? screenshotDark : screenshotLight} alt="Immich application" />
-
-      <div class="absolute top-[-55%] left-0 -z-10 h-[200%] w-full overflow-visible">
-        <Logo size="giant" class="z-10 mb-2 size-full antialiased opacity-20 blur-3xl" />
-        <div class="bg-immich-bg/90 absolute top-0 left-0 size-full backdrop-blur-xl dark:bg-transparent"></div>
-      </div>
-    </div>
-
-    <hr class="m-2 w-full max-w-(--breakpoint-sm) border-t" />
-    <Heading size="title" tag="h2">Download mobile app</Heading>
-
-    <Text size="large">Download Immich app and start backing up your photos and videos securely to your own server</Text
-    >
-
-    <div class="flex flex-col gap-4 lg:flex-row">
-      <Button href={Constants.Get.Android} variant="ghost" class="p-0">
-        <img src={playStoreBadge} alt="Playstore Badge" class="h-16" />
-      </Button>
-      <Button href={Constants.Get.iOS} variant="ghost" class="p-0">
-        <img src={appStoreBadge} alt="AppStore Badge" class="h-16" />
-      </Button>
-    </div>
-
-    <img src={themeManager.value === 'dark' ? qrCodeDark : qrCodeLight} alt="QRCode" class="h-36 rounded-xl" />
-
-    <hr class="m-8 w-full max-w-(--breakpoint-sm) border-t" />
-    <Heading size="title" tag="h2">Support the project</Heading>
-
-    <Text size="large">
-      Support Immich by purchasing a <Link href={Constants.Sites.Buy}>product key</Link>,
-      <Link href={Constants.Sites.Store}>merch</Link>, or contributing on
-      <Link href={Constants.Socials.Github}>GitHub</Link> or
-      <Link href={Constants.Socials.Weblate}>Weblate</Link>
-    </Text>
-
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-      {#each supportItems as action, i (i)}
-        <Button href={action.href} size="large" variant="outline" color="secondary" leadingIcon={action.icon}>
-          {action.text}
-        </Button>
-      {/each}
-    </div>
-  </VStack>
-{:else}
-  <div class="h-screen w-full"></div>
-{/if}
+  {/each}
+</section>
