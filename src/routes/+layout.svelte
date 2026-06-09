@@ -128,7 +128,9 @@
             </Button>
           </div>
           <div class="flex place-items-center justify-end gap-2">
-            <Button href={Sites.App} color="primary" size="small" trailingIcon={mdiOpenInNew}>Open the map</Button>
+            <Button href={Sites.App} color="primary" size="small" trailingIcon={mdiOpenInNew} class="whitespace-nowrap"
+              >Open the map</Button
+            >
             <CommandPaletteButton />
             <ThemeSwitcher />
           </div>
