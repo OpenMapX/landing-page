@@ -21,7 +21,7 @@
   <span class={className}>
     <span class="inline-flex items-center gap-2">
       <img src={mark} alt="" class="size-8" />
-      <span class="text-xl font-extrabold tracking-tight">OpenMapX</span>
+      <span class="text-xl leading-none font-extrabold tracking-tight">OpenMapX</span>
     </span>
   </span>
 {/if}
