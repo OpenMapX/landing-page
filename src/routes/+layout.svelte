@@ -2,7 +2,7 @@
   import { afterNavigate, beforeNavigate } from '$app/navigation';
   import { page } from '$app/state';
   import PageContent from '$common/components/PageContent.svelte';
-  import { getBlogProvider, posts, siteMetadata } from '$lib';
+  import { getBlogProvider, posts } from '$lib';
   import Logo from '$lib/components/Logo.svelte';
   import { Sites, Socials } from '$lib/constants';
   import { getSiteProvider } from '$lib/siteCommands';
@@ -20,7 +20,6 @@
     Link,
     NavbarItem,
     ScreencastOverlay,
-    SiteMetadata,
     Text,
     ThemeSwitcher,
     TooltipProvider,
@@ -75,8 +74,6 @@
 <CommandPaletteProvider providers={[getBlogProvider(), getSiteProvider()]} />
 
 <ScreencastOverlay />
-
-<SiteMetadata site={siteMetadata} />
 
 <TooltipProvider>
   <AppShell>

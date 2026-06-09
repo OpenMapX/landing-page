@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { Heading, Icon, Text } from '@immich/ui';
+  import { Heading, Icon, SiteMetadata, Text } from '@immich/ui';
   import {
     mdiMapSearchOutline, mdiBusMultiple, mdiCarOutline, mdiEvStation,
     mdiParking, mdiBikeFast, mdiImageMultipleOutline, mdiWifiOff, mdiTranslate, mdiShieldLockOutline,
   } from '@mdi/js';
+  import { siteMetadata } from '$lib';
 
   const features = [
     { icon: mdiMapSearchOutline, title: 'Search & places', body: 'Geocoding and autocomplete across open datasets, with rich place panels, hours, photos and reviews.' },
@@ -18,6 +19,11 @@
     { icon: mdiShieldLockOutline, title: 'Privacy & open data', body: 'No ad tracking. Built on open data and self-hostable end to end.' },
   ];
 </script>
+
+<SiteMetadata
+  site={siteMetadata}
+  page={{ title: 'Features', description: 'Search, transit, directions, mobility, street view and more — on one open-data map.' }}
+/>
 
 <section class="py-12">
   <Heading size="title" tag="h1" fontWeight="extra-bold" class="text-center">Everything on one map</Heading>

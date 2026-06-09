@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { Button, Heading, Text } from '@immich/ui';
+  import { Button, Heading, SiteMetadata, Text } from '@immich/ui';
   import { mdiOpenInNew, mdiDownloadBox, mdiServerNetwork } from '@mdi/js';
+  import { siteMetadata } from '$lib';
   import { Sites, SelfHost } from '$lib/constants';
 
   const options = [
@@ -9,6 +10,11 @@
     { icon: mdiServerNetwork, title: 'Self-host', body: 'Run the full stack with Docker Compose and own your data end to end.', cta: 'Self-hosting guide', href: SelfHost.Compose },
   ];
 </script>
+
+<SiteMetadata
+  site={siteMetadata}
+  page={{ title: 'Download', description: 'Use OpenMapX in your browser, install the PWA, or self-host it with Docker.' }}
+/>
 
 <section class="py-12">
   <Heading size="title" tag="h1" fontWeight="extra-bold" class="text-center">Get OpenMapX</Heading>

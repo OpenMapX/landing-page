@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { Button, Heading, Text } from '@immich/ui';
+  import { Button, Heading, SiteMetadata, Text } from '@immich/ui';
   import { mdiMapSearchOutline, mdiOpenInNew } from '@mdi/js';
   import { siGithub } from 'simple-icons';
+  import { siteMetadata } from '$lib';
   import { Sites, Socials } from '$lib/constants';
   import Logo from '$lib/components/Logo.svelte';
 
@@ -14,6 +15,8 @@
     { title: 'Offline & installable', body: 'Install as a PWA and keep your maps when you go offline.' },
   ];
 </script>
+
+<SiteMetadata site={siteMetadata} />
 
 <section class="flex flex-col items-center gap-8 py-12 text-center lg:py-20">
   <Logo variant="stacked" />

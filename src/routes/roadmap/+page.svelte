@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Heading, Text } from '@immich/ui';
+  import { Heading, SiteMetadata, Text } from '@immich/ui';
+  import { siteMetadata } from '$lib';
 
   const milestones = [
     { status: 'Shipped', title: 'Map, search & places', body: 'MapLibre rendering, geocoding, place details.' },
@@ -10,6 +11,11 @@
     { status: 'Planned', title: 'Natural-language search', body: 'Ask for places in plain language.' },
   ];
 </script>
+
+<SiteMetadata
+  site={siteMetadata}
+  page={{ title: 'Roadmap', description: "What's shipped and what's next for OpenMapX." }}
+/>
 
 <section class="py-12">
   <Heading size="title" tag="h1" fontWeight="extra-bold" class="text-center">Roadmap</Heading>
