@@ -92,7 +92,7 @@
             {/snippet}
           </AnnouncementBanner>
         {/if}
-        <nav class="flex grid-cols-[1fr_auto_1fr] justify-between p-2 lg:grid lg:gap-2">
+        <nav class="flex grid-cols-[1fr_auto_1fr] justify-between px-3 py-2 lg:grid lg:gap-2">
           <div class="flex place-items-center gap-2">
             <IconButton
               shape="round"
