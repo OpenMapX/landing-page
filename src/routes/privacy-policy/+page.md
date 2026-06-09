@@ -5,26 +5,47 @@ description: How the OpenMapX website collects, uses, and protects your informat
 updatedAt: 2026-06-09
 ---
 
+<script>
+  import { legalConfig } from '$lib/legalConfig';
+</script>
+
 ### 1. Scope of This Policy
 
-This Privacy Policy applies to the OpenMapX website at [openmapx.org](https://openmapx.org) ("we", "our", or "us") and covers our collection, use, and disclosure of your information. This Policy does not cover any third-party websites, services, or applications that can be accessed through our site. The OpenMapX application ([openmapx.com](https://openmapx.com)) has its own in-app privacy notice.
+This Privacy Policy applies to the OpenMapX marketing website at [openmapx.org](https://openmapx.org) ("we", "our", or "us") and covers our collection, use, and disclosure of your information. It does not cover any third-party websites or services you reach through links on this site. The OpenMapX application at [openmapx.com](https://openmapx.com) processes data differently and has its own, more detailed privacy policy.
 
-### 2. What We Collect
+### 2. Controller
 
-This site is statically hosted and does not set advertising or tracking cookies. We collect only aggregate, privacy-respecting server logs (timestamp, requested path, response status) to keep the site running and secure.
+The controller responsible for data processing on this website, within the meaning of the GDPR, is:
 
-### 3. What We Do Not Do
+{legalConfig.name}\
+{legalConfig.street}\
+{legalConfig.postalCode} {legalConfig.city}, {legalConfig.country}\
+Email: <a href="mailto:{legalConfig.privacyEmail}">{legalConfig.privacyEmail}</a>
 
-We do not sell data, run third-party ad trackers, or build advertising profiles.
+### 3. What We Collect
 
-### 4. Security
+This site is statically hosted. When you visit it, our server automatically processes standard request data — your IP address, the date and time of the request, the requested page, the referrer, and your browser and operating system. We use this solely to operate and secure the site. The legal basis is Art. 6(1)(f) GDPR (our legitimate interest in a functional, secure website). These server logs are automatically deleted after {legalConfig.logRetentionDays} days.
 
-We're committed to safeguarding your information. While no system is 100% secure, we take various measures to protect information about you from unauthorized access, use, alteration, or destruction.
+### 4. Cookies and Local Storage
 
-### 5. Changes to This Policy
+We use first-party storage only, and only for functionality. If you switch between light and dark mode, your choice is saved in your browser's local storage so the site remembers it across visits — this contains no personal data. Fonts and all other assets are served from our own server, so this site makes no requests to third-party content-delivery networks. We set **no** analytics, tracking, or advertising cookies, and therefore show no cookie-consent banner.
 
-We may update our Privacy Policy from time to time. If we make any changes, we will notify you by revising the "Last updated" date at the top of this policy. It's encouraged that users frequently check this page for any changes to stay informed about how we are helping to protect the personal information we collect.
+### 5. What We Do Not Do
 
-### 6. Contact Us
+We do not sell your data, run third-party ad trackers, build advertising profiles, or share your personal data with third parties for marketing purposes.
 
-If you have any questions about this Privacy Policy, please contact us at [privacy@openmapx.org](mailto:privacy@openmapx.org).
+### 6. Your Rights
+
+Under the GDPR you have the right to access, rectify, erase, restrict, and port your personal data, and to object to processing based on legitimate interests. You also have the right to lodge a complaint with a data-protection supervisory authority. To exercise any of these rights, contact us at <a href="mailto:{legalConfig.privacyEmail}">{legalConfig.privacyEmail}</a>.
+
+### 7. Security
+
+We are committed to safeguarding your information. While no system is 100% secure, we take appropriate measures — including encrypted connections (TLS/HTTPS) — to protect it from unauthorized access, use, alteration, or destruction.
+
+### 8. Changes to This Policy
+
+We may update this Privacy Policy from time to time. If we make any changes, we will revise the "Last updated" date at the top of this page.
+
+### 9. Contact
+
+For any questions about this Privacy Policy, contact us at <a href="mailto:{legalConfig.privacyEmail}">{legalConfig.privacyEmail}</a>.
