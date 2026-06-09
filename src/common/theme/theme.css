@@ -2,40 +2,40 @@
 
 @layer base {
   /*
-    OpenMapX brand primary — #1313D4 (hsl 240 84% 45%).
+    OpenMapX brand primary — #43A047 (Material Green).
     @immich/ui derives every `primary` utility from the `--immich-ui-primary-*`
     scale (`--color-primary` = `--immich-ui-primary-500`), so we override the
     whole scale here, not the legacy `--immich-primary` var. To retheme, change
-    the hue/lightness below (500 is the exact brand color).
+    the values below (500 is the exact brand color).
   */
   :root,
   .light {
-    --immich-ui-primary-50: hsl(240 84% 97%);
-    --immich-ui-primary-100: hsl(240 84% 94%);
-    --immich-ui-primary-200: hsl(240 84% 88%);
-    --immich-ui-primary-300: hsl(240 84% 78%);
-    --immich-ui-primary-400: hsl(240 84% 63%);
-    --immich-ui-primary-500: #1313d4;
-    --immich-ui-primary-600: hsl(240 84% 40%);
-    --immich-ui-primary-700: hsl(240 82% 34%);
-    --immich-ui-primary-800: hsl(240 80% 28%);
-    --immich-ui-primary-900: hsl(240 76% 22%);
-    --immich-ui-primary-950: hsl(240 72% 15%);
+    --immich-ui-primary-50: #e8f5e9;
+    --immich-ui-primary-100: #c8e6c9;
+    --immich-ui-primary-200: #a5d6a7;
+    --immich-ui-primary-300: #81c784;
+    --immich-ui-primary-400: #66bb6a;
+    --immich-ui-primary-500: #43a047;
+    --immich-ui-primary-600: #388e3c;
+    --immich-ui-primary-700: #2e7d32;
+    --immich-ui-primary-800: #256c2a;
+    --immich-ui-primary-900: #1b5e20;
+    --immich-ui-primary-950: #0e3d14;
   }
 
   .dark {
-    /* lighter tints of the same hue so the brand stays legible on dark surfaces */
-    --immich-ui-primary-50: hsl(240 60% 16%);
-    --immich-ui-primary-100: hsl(240 62% 22%);
-    --immich-ui-primary-200: hsl(240 66% 30%);
-    --immich-ui-primary-300: hsl(240 72% 42%);
-    --immich-ui-primary-400: hsl(240 82% 58%);
-    --immich-ui-primary-500: hsl(240 90% 70%);
-    --immich-ui-primary-600: hsl(240 92% 77%);
-    --immich-ui-primary-700: hsl(240 92% 83%);
-    --immich-ui-primary-800: hsl(240 90% 89%);
-    --immich-ui-primary-900: hsl(240 88% 94%);
-    --immich-ui-primary-950: hsl(240 86% 97%);
+    /* inverted, lighter tints so the brand stays legible on dark surfaces */
+    --immich-ui-primary-50: #0e3d14;
+    --immich-ui-primary-100: #1b5e20;
+    --immich-ui-primary-200: #2e7d32;
+    --immich-ui-primary-300: #388e3c;
+    --immich-ui-primary-400: #4caf50;
+    --immich-ui-primary-500: #81c784;
+    --immich-ui-primary-600: #a5d6a7;
+    --immich-ui-primary-700: #c8e6c9;
+    --immich-ui-primary-800: #dcedc8;
+    --immich-ui-primary-900: #e8f5e9;
+    --immich-ui-primary-950: #f1f8e9;
   }
 }
 
