@@ -5,7 +5,7 @@ export const Sites = {
 };
 
 export const Socials = {
-  Github: 'https://github.com/OpenMapX',
+  Github: 'https://github.com/OpenMapX/openmapx',
 };
 
 export const SelfHost = {
