@@ -11,7 +11,7 @@ const config = {
     svelteMarkdownPreprocess({
       layouts: {
         default: '$lib/components/BlogPage.svelte',
-        PrivacyPolicyPage: '$lib/components/PrivacyPolicyPage.svelte',
+        LegalPage: '$lib/components/LegalPage.svelte',
       },
     }),
     vitePreprocess(),

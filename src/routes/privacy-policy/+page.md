@@ -1,5 +1,5 @@
 ---
-layout: PrivacyPolicyPage
+layout: LegalPage
 title: Privacy Policy
 description: How the OpenMapX website collects, uses, and protects your information.
 updatedAt: 2026-06-09
@@ -22,9 +22,15 @@ The controller responsible for data processing on this website, within the meani
 {legalConfig.postalCode} {legalConfig.city}, {legalConfig.country}\
 Email: <a href="mailto:{legalConfig.privacyEmail}">{legalConfig.privacyEmail}</a>
 
+A Data Protection Officer is not legally required and has therefore not been appointed. For any data-protection matters, contact us at the address above.
+
 ### 3. What We Collect
 
 This site is statically hosted. When you visit it, our server automatically processes standard request data — your IP address, the date and time of the request, the requested page, the referrer, and your browser and operating system. We use this solely to operate and secure the site. The legal basis is Art. 6(1)(f) GDPR (our legitimate interest in a functional, secure website). These server logs are automatically deleted after {legalConfig.logRetentionDays} days.
+
+{#if legalConfig.hostingProvider}
+Our website is hosted by {legalConfig.hostingProvider}, which processes the above server-log data on our behalf and strictly on our instructions (a processor within the meaning of Art. 28 GDPR). A data-processing agreement is in place.{#if legalConfig.hostingLocations} The data centres are located in {legalConfig.hostingLocations}.{/if}
+{/if}
 
 ### 4. Cookies and Local Storage
 
@@ -32,7 +38,7 @@ We use first-party storage only, and only for functionality. If you switch betwe
 
 ### 5. What We Do Not Do
 
-We do not sell your data, run third-party ad trackers, build advertising profiles, or share your personal data with third parties for marketing purposes.
+We do not sell your data, run third-party ad trackers, build advertising profiles, share your personal data with third parties for marketing purposes, or carry out automated decision-making (including profiling) within the meaning of Art. 22 GDPR.
 
 ### 6. Your Rights
 

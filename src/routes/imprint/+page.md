@@ -1,5 +1,5 @@
 ---
-layout: PrivacyPolicyPage
+layout: LegalPage
 title: Legal Notice
 description: Provider information for the OpenMapX website pursuant to § 5 DDG.
 updatedAt: 2026-06-09

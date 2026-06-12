@@ -26,6 +26,7 @@
       links: [
         { href: '/privacy-policy', text: 'Privacy Policy' },
         { href: '/terms', text: 'Terms' },
+        { href: '/trademark', text: 'Trademark' },
         { href: '/imprint', text: 'Legal Notice' },
       ],
     },

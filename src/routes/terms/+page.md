@@ -1,5 +1,5 @@
 ---
-layout: PrivacyPolicyPage
+layout: LegalPage
 title: Terms of Use
 description: The terms that govern your use of the OpenMapX website.
 updatedAt: 2026-06-09
@@ -19,7 +19,7 @@ This website is provided on an "as is" and "as available" basis, without warrant
 
 ### 3. Intellectual Property
 
-OpenMapX is open-source software; your use of the source code is governed by its license (see our [GitHub](https://github.com/OpenMapX)). The OpenMapX name and logo belong to the operator and may not be used without prior written consent. Any map data shown on this site comes from open-data sources under their respective licenses and attributions.
+OpenMapX is open-source software; your use of the source code is governed by its license (see our [GitHub](https://github.com/OpenMapX)). The OpenMapX name and logo are trademarks and may not be used without permission — see our [Trademark Policy](/trademark). Any map data shown on this site comes from open-data sources under their respective licenses and attributions.
 
 ### 4. Governing Law
 
