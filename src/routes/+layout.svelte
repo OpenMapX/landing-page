@@ -137,7 +137,7 @@
     </AppShellHeader>
 
     <AppShellSidebar bind:open>
-      <div class="my-4 me-4">
+      <div class="m-4">
         <Button
           href={Sites.App}
           color="primary"
