@@ -29,7 +29,7 @@ A Data Protection Officer is not legally required and has therefore not been app
 This site is statically hosted. When you visit it, our server automatically processes standard request data — your IP address, the date and time of the request, the requested page, the referrer, and your browser and operating system. We use this solely to operate and secure the site. The legal basis is Art. 6(1)(f) GDPR (our legitimate interest in a functional, secure website). These server logs are automatically deleted after {legalConfig.logRetentionDays} days.
 
 {#if legalConfig.hostingProvider}
-Our website is hosted by {legalConfig.hostingProvider}, which processes the above server-log data on our behalf and strictly on our instructions (a processor within the meaning of Art. 28 GDPR). A data-processing agreement is in place.{#if legalConfig.hostingLocations} The data centres are located in {legalConfig.hostingLocations}.{/if}
+Our website is hosted by {legalConfig.hostingProvider}, which processes the above server-log data on our behalf and strictly on our instructions (a processor within the meaning of Art. 28 GDPR). A data-processing agreement is in place. {#if legalConfig.hostingLocations}The data centres are located in {legalConfig.hostingLocations}.{/if}
 {/if}
 
 ### 4. Cookies and Local Storage
