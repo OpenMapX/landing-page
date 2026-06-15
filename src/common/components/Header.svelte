@@ -17,9 +17,8 @@
 
 <nav class="flex w-full items-center justify-between p-2 md:gap-2">
   <div class="flex place-items-center gap-2">
-    <a href="/" class="flex gap-2 text-4xl">
-      <Logo variant="inline" class="hidden sm:block" />
-      <Logo variant="mark" class="sm:hidden" />
+    <a href="/" class="flex items-center gap-2">
+      <Logo variant="responsive" />
     </a>
   </div>
 

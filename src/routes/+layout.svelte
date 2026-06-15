@@ -52,7 +52,7 @@
     window.scrollTo({ top: 0, behavior: 'auto' });
   });
 
-  const sidebar = new MediaQuery(`max-width: 850px`);
+  const sidebar = new MediaQuery(`max-width: 1023px`);
   let isMobile = $derived(sidebar.current);
   let isOpen = $state(false);
   let open = $derived(isMobile && isOpen);
@@ -101,11 +101,10 @@
               aria-label="Main menu"
               icon={mdiMenu}
               onclick={() => (isOpen = !isOpen)}
-              class="md:hidden"
+              class="lg:hidden"
             />
             <a href="/" class="flex items-center gap-2">
-              <Logo variant="inline" class="hidden sm:inline-flex" />
-              <Logo variant="mark" class="size-8 sm:hidden" />
+              <Logo variant="responsive" />
             </a>
           </div>
 
@@ -125,9 +124,11 @@
             </Button>
           </div>
           <div class="flex place-items-center justify-end gap-2">
-            <Button href={Sites.App} color="primary" size="small" trailingIcon={mdiOpenInNew} class="whitespace-nowrap"
-              >Open the map</Button
-            >
+            <div class="hidden lg:flex">
+              <Button href={Sites.App} color="primary" size="small" trailingIcon={mdiOpenInNew} class="whitespace-nowrap"
+                >Open the map</Button
+              >
+            </div>
             <CommandPaletteButton />
             <ThemeSwitcher />
           </div>
@@ -137,6 +138,14 @@
 
     <AppShellSidebar bind:open>
       <div class="my-4 me-4">
+        <Button
+          href={Sites.App}
+          color="primary"
+          trailingIcon={mdiOpenInNew}
+          class="mb-3 w-full justify-center whitespace-nowrap"
+        >
+          Open the map
+        </Button>
         <NavbarItem title="Features" href="/features" icon={mdiStarShootingOutline} />
         <NavbarItem title="Download" href="/download" icon={mdiDownload} />
         <NavbarItem title="Roadmap" href="/roadmap" icon={mdiChartGantt} />
