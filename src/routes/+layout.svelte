@@ -79,6 +79,7 @@
   <AppShell>
     <AppShellHeader>
       <div class="w-full">
+        <!-- Featured blog post banner — temporarily disabled while we surface the experimental notice below.
         {#if !page.url.pathname.startsWith('/blog') && featuredPost}
           <AnnouncementBanner until={featuredPost.publishedAt.plus({ week: 1 })}>
             {#snippet content()}
@@ -91,6 +92,18 @@
             {/snippet}
           </AnnouncementBanner>
         {/if}
+        -->
+        <AnnouncementBanner color="warning">
+          {#snippet content()}
+            <div class="flex flex-wrap items-center justify-center gap-1 text-center">
+              OpenMapX is still experimental — both the
+              <Link href={Socials.Github}>code</Link>
+              and the live deployment at
+              <Link href={Sites.App}>openmapx.com</Link>
+              are works in progress, so expect rough edges.
+            </div>
+          {/snippet}
+        </AnnouncementBanner>
         <nav class="flex grid-cols-[1fr_auto_1fr] justify-between px-3 py-2 lg:grid lg:gap-2">
           <div class="flex place-items-center gap-2">
             <IconButton
