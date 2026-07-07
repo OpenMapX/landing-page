@@ -13,6 +13,7 @@
     Text,
   } from '@immich/ui';
   import {
+    mdiAlertOctagonOutline,
     mdiBikeFast,
     mdiBusMultiple,
     mdiCarOutline,
@@ -26,6 +27,7 @@
     mdiMapSearchOutline,
     mdiNavigationVariantOutline,
     mdiParking,
+    mdiPuzzleOutline,
     mdiServerNetworkOutline,
     mdiShieldLockOutline,
     mdiStarOutline,
@@ -42,9 +44,12 @@
   const features: Feature[] = [
     { title: 'Search & places', description: 'Geocoding and autocomplete across open datasets, without the tracking.', icon: mdiMapSearchOutline },
     { title: 'Place details', description: 'Rich place panels with hours, photos, contact info and more.', icon: mdiMapMarkerOutline },
+    { title: 'Overture POI data', description: 'Rich places and POI details enriched with Overture Maps data and GERS links.', icon: mdiMapMarkerOutline },
     { title: 'Public transit', description: 'Real-time, multi-modal routing across thousands of agencies via MOTIS and open GTFS feeds.', icon: mdiBusMultiple },
     { title: 'Directions', description: 'Driving, cycling and walking routes powered by OSRM and Valhalla.', icon: mdiDirections },
     { title: 'Live navigation', description: 'Turn-by-turn guidance with automatic rerouting when you go off-route.', icon: mdiNavigationVariantOutline },
+    { title: 'Closure avoidance', description: 'Real-time road closure avoidance and TTS nav notifications.', icon: mdiAlertOctagonOutline },
+    { title: 'Extensions Store', description: 'Extend the map via a unified store, prebuilt developer SDK, and custom overlays.', icon: mdiPuzzleOutline },
     { title: 'EV charging', description: 'Live charge-point availability from OpenChargeMap and OpenStreetMap.', icon: mdiEvStation },
     { title: 'Parking', description: 'On- and off-street parking with availability where data exists.', icon: mdiParking },
     { title: 'Bike & scooter sharing', description: 'GBFS micromobility — bikes and scooters — on the map.', icon: mdiBikeFast },
@@ -55,7 +60,7 @@
     { title: 'Reviews', description: 'Open, signed and portable reviews via Mangrove.', icon: mdiStarOutline },
     { title: 'Offline & PWA', description: 'Install to your device and keep maps working without a connection.', icon: mdiWifiOff },
     { title: 'Multilingual', description: 'Fully localized UI and map labels (English and German today).', icon: mdiTranslate },
-    { title: 'Natural-language search', description: 'Ask for places in plain language (coming soon).', icon: mdiMagnifyExpand },
+    { title: 'Natural-language search', description: 'Ask for places in plain language, compiled directly to Overpass queries.', icon: mdiMagnifyExpand },
     { title: 'Privacy & open data', description: 'No ad tracking, no profiling — built entirely on open data.', icon: mdiShieldLockOutline },
     { title: 'Self-hostable', description: 'Run the whole stack yourself with Docker and own your data.', icon: mdiServerNetworkOutline },
   ];

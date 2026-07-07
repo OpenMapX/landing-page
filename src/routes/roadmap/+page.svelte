@@ -5,7 +5,9 @@
   import { Heading, SiteMetadata, Stack, Text } from '@immich/ui';
   import {
     mdiAirplaneTakeoff,
+    mdiAlertOctagonOutline,
     mdiBusMultiple,
+    mdiCarOutline,
     mdiCellphoneArrowDown,
     mdiCompassOutline,
     mdiDirections,
@@ -18,8 +20,10 @@
     mdiMapSearchOutline,
     mdiNavigationVariantOutline,
     mdiPalette,
+    mdiPuzzleOutline,
     mdiStarOutline,
     mdiTranslate,
+    mdiWifiOff,
   } from '@mdi/js';
 
   const onDate = (year: number, month: number) => (language: string) =>
@@ -29,11 +33,11 @@
   // Newest / future first.
   const items: TimelineItem[] = [
     {
-      icon: mdiMagnifyExpand,
-      title: 'Natural-language search',
-      description: 'Ask for places in plain language and let OpenMapX do the rest.',
+      icon: mdiMapSearchOutline,
+      title: 'Search along route',
+      description: 'Find charging stations, restaurants, and other stops directly along your active navigation path.',
       done: false,
-      getDateLabel: label('Planned'),
+      getDateLabel: label('In progress'),
     },
     {
       icon: mdiCellphoneArrowDown,
@@ -41,6 +45,40 @@
       description: 'PWA install, offline map packs, and mobile UX refinements.',
       done: false,
       getDateLabel: label('In progress'),
+    },
+    {
+      icon: mdiWifiOff,
+      title: 'Offline POI search & outbox',
+      description: 'Download areas with a local POI index and queue edits offline to replay when connected.',
+      done: false,
+      getDateLabel: label('Planned'),
+    },
+    {
+      icon: mdiCarOutline,
+      title: 'Commute dashboard & live ETAs',
+      description: 'Get automatic live ETAs and traffic updates for home and work destinations directly on app load.',
+      done: false,
+      getDateLabel: label('Planned'),
+    },
+    {
+      icon: mdiBusMultiple,
+      title: 'Crowd-sourced transit tracking',
+      description: 'Stream rider GPS data to synthesize live delays (GTFS-RT) on transit lines with no official feeds.',
+      done: false,
+      getDateLabel: label('Planned'),
+    },
+    {
+      icon: mdiStarOutline,
+      title: 'Table reservations & deep links',
+      description: 'Deep-link integration for restaurant reservations and table bookings with privacy-first affiliate support.',
+      done: false,
+      getDateLabel: label('Planned'),
+    },
+    {
+      icon: mdiPuzzleOutline,
+      title: 'Extensions & custom overlays',
+      description: 'Extend the map with a unified extensions store, prebuilt developer SDK, standalone CLI, and custom overlay support.',
+      getDateLabel: onDate(2026, 7),
     },
     {
       icon: mdiBusMultiple,
