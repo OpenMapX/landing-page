@@ -47,10 +47,16 @@
 
   <div class="relative w-full max-w-4xl">
     <div class="bg-primary/10 absolute inset-x-8 top-10 -z-10 h-3/4 rounded-full blur-3xl"></div>
-    <picture>
-      <source srcset="/img/screenshot-dark.webp" media="(prefers-color-scheme: dark)" />
-      <img src="/img/screenshot-light.webp" alt="OpenMapX map" class="rounded-xl border shadow-xl" />
-    </picture>
+    <img
+      src="/img/screenshot-dark.webp"
+      alt="OpenMapX map"
+      class="hidden dark:block rounded-xl border shadow-xl"
+    />
+    <img
+      src="/img/screenshot-light.webp"
+      alt="OpenMapX map"
+      class="block dark:hidden rounded-xl border shadow-xl"
+    />
   </div>
 
   <hr class="m-2 w-full max-w-(--breakpoint-sm) border-t" />
