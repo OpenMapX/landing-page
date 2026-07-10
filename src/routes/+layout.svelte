@@ -95,7 +95,7 @@
         -->
         <AnnouncementBanner color="warning">
           {#snippet content()}
-            <div class="flex flex-wrap items-center justify-center gap-1 text-center">
+            <div class="text-center">
               OpenMapX is still experimental — both the
               <Link href={Socials.Github}>code</Link>
               and the live deployment at
