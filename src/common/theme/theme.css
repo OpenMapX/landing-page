@@ -2,30 +2,41 @@
 
 @layer base {
   /*
-    OpenMapX brand primary — #43A047 (Material Green).
+    OpenMapX brand primary — #207E23, hsl(122, 60%, 31%).
     @immich/ui derives every `primary` utility from the `--immich-ui-primary-*`
     scale (`--color-primary` = `--immich-ui-primary-500`), so we override the
     whole scale here, not the legacy `--immich-primary` var. To retheme, change
     the values below (500 is the exact brand color).
+
+    The scale is generated at hue 122 with saturation rising toward the dark
+    end. It is deliberately more saturated and darker than a stock Material
+    Green ramp: 500 has to clear WCAG AA both as text on white (5.2:1) and as
+    white text on a filled button, and reaching that by darkening a low-
+    saturation green converges on Organic Maps' brand colour.
+
+    Steps 50, 500 and 600 are the exact tokens the web app uses for
+    --omx-brand-light, --omx-brand and --omx-brand-hover — keep them in sync.
   */
   :root,
   .light {
     --immich-ui-primary-50: #e8f5e9;
-    --immich-ui-primary-100: #c8e6c9;
-    --immich-ui-primary-200: #a5d6a7;
-    --immich-ui-primary-300: #81c784;
-    --immich-ui-primary-400: #66bb6a;
-    --immich-ui-primary-500: #43a047;
-    --immich-ui-primary-600: #388e3c;
-    --immich-ui-primary-700: #2e7d32;
-    --immich-ui-primary-800: #256c2a;
-    --immich-ui-primary-900: #1b5e20;
-    --immich-ui-primary-950: #0e3d14;
+    --immich-ui-primary-100: #cae7cb;
+    --immich-ui-primary-200: #a6d9a7;
+    --immich-ui-primary-300: #79c87c;
+    --immich-ui-primary-400: #3bb03f;
+    --immich-ui-primary-500: #207e23;
+    --immich-ui-primary-600: #1b6a1d;
+    --immich-ui-primary-700: #155b18;
+    --immich-ui-primary-800: #114b12;
+    --immich-ui-primary-900: #0c3b0e;
+    --immich-ui-primary-950: #072708;
   }
 
   .dark {
-    /* inverted, lighter tints so the brand stays legible on dark surfaces */
-    --immich-ui-primary-50: #0e3d14;
+    /* Inverted, lighter tints so the brand stays legible on dark surfaces.
+       Unchanged from the Material ramp: 500/600 already match the web app's
+       dark-mode --omx-brand / --omx-brand-hover, and 50 matches its tint. */
+    --immich-ui-primary-50: #1b3a20;
     --immich-ui-primary-100: #1b5e20;
     --immich-ui-primary-200: #2e7d32;
     --immich-ui-primary-300: #388e3c;

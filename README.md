@@ -29,7 +29,8 @@ legal values are fixed at build time, so rebuild the image to change them. See t
 ## Brand
 
 Primary color is the `--immich-ui-primary-*` scale in `src/common/theme/theme.css`
-(currently a #43A047 Material-green palette; the `500` step is the exact brand color).
+(currently a #207E23 green palette; the `500` step is the exact brand color, and
+steps 50/500/600 are kept in sync with the web app's brand tokens).
 Typeface is Google Sans Flex (OFL, `@fontsource-variable/google-sans-flex`). Logo:
 `src/lib/components/Logo.svelte`. Replace the placeholder screenshots in
 `static/img/screenshot-{light,dark}.webp` with real captures.
