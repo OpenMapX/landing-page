@@ -33,20 +33,21 @@
   }
 
   .dark {
-    /* Inverted, lighter tints so the brand stays legible on dark surfaces.
-       Unchanged from the Material ramp: 500/600 already match the web app's
-       dark-mode --omx-brand / --omx-brand-hover, and 50 matches its tint. */
-    --immich-ui-primary-50: #1b3a20;
-    --immich-ui-primary-100: #1b5e20;
-    --immich-ui-primary-200: #2e7d32;
-    --immich-ui-primary-300: #388e3c;
-    --immich-ui-primary-400: #4caf50;
-    --immich-ui-primary-500: #81c784;
-    --immich-ui-primary-600: #a5d6a7;
-    --immich-ui-primary-700: #c8e6c9;
-    --immich-ui-primary-800: #dcedc8;
-    --immich-ui-primary-900: #e8f5e9;
-    --immich-ui-primary-950: #f1f8e9;
+    /* Inverted so the brand stays legible on dark surfaces: same hue and
+       saturation family as the light scale, lifted in lightness rather than
+       swapped for a flatter Material green. 50/500/600 are the web app's
+       dark-mode --omx-brand-light / --omx-brand / --omx-brand-hover. */
+    --immich-ui-primary-50: #114513;
+    --immich-ui-primary-100: #18621b;
+    --immich-ui-primary-200: #238527;
+    --immich-ui-primary-300: #2fa733;
+    --immich-ui-primary-400: #45c94a;
+    --immich-ui-primary-500: #71d674;
+    --immich-ui-primary-600: #9cde9e;
+    --immich-ui-primary-700: #c0e7c1;
+    --immich-ui-primary-800: #d4edd4;
+    --immich-ui-primary-900: #e6f4e7;
+    --immich-ui-primary-950: #f1f9f1;
   }
 }
 
