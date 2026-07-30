@@ -36,8 +36,8 @@
 <div class="mb-4">
   <Heading size="large" tag="h2">Use the app</Heading>
   <Text color="muted">
-    No account needed — open OpenMapX in any modern browser, or install it for an app-like, offline-capable
-    experience.
+    No account needed — open OpenMapX in any modern browser, or install it for an app-like experience. Download
+    regions for offline vector maps and optionally keep recently opened places, routes, and searches available.
   </Text>
 </div>
 
@@ -58,7 +58,7 @@
   <Card color="secondary">
     <CardHeader>
       <CardTitle>Install (PWA)</CardTitle>
-      <CardDescription>Add OpenMapX to your home screen for offline-capable maps.</CardDescription>
+      <CardDescription>Install the app and download map areas for offline use.</CardDescription>
     </CardHeader>
     <CardBody class="text-primary flex items-center justify-center align-middle">
       <Icon icon={mdiCellphoneArrowDown} size="4rem" class="m-4" />

@@ -24,10 +24,10 @@
   </Heading>
 
   <Text size="large">
-    OpenMapX brings search, directions, public transit, and street-level imagery together on one fast,<br
+    OpenMapX brings search, road and EV routing, live transit navigation, and street-level imagery<br
       class="hidden lg:block"
     />
-    privacy-respecting map — built entirely on open data, self-hostable, ad-free, and yours.
+    together on one fast, privacy-respecting map — built on open data, self-hostable, ad-free, and yours.
   </Text>
 
   <div class="flex flex-col gap-4">
@@ -63,8 +63,8 @@
   <Heading size="title" tag="h2">Everything on one map</Heading>
 
   <Text size="large">
-    Search and places, public transit, turn-by-turn directions, shared mobility, and street-level imagery —
-    without the tracking.
+    Search by text or voice, compare road, EV, and transit journeys, navigate turn by turn, check live road
+    conditions, and explore places, shared mobility, and weather — without ad tracking or profiling.
   </Text>
 
   <Button size="large" href="/features" color="secondary">Explore all features</Button>
