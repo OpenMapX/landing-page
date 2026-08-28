@@ -151,7 +151,7 @@ export const getBlogProvider = () => {
   const commands: ActionItem[] = posts.map((post) => ({
     title: post.title,
     description: `${post.publishedAt.toLocaleString(DateTime.DATE_MED)} — ${post.description}`,
-    extraText: post.url,
+    text: post.url,
     tags: [typeToLabel(post.type)],
     onAction: () => goto(post.url),
   }));

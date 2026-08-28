@@ -6,15 +6,15 @@ const openExternal = (href: string) => () => window.open(href, '_blank', 'noopen
 
 export const getSiteProvider = () => {
   const actions: ActionItem[] = [
-    { title: 'Features', extraText: '/features', onAction: () => goto('/features') },
-    { title: 'Download', extraText: '/download', onAction: () => goto('/download') },
-    { title: 'Roadmap', extraText: '/roadmap', onAction: () => goto('/roadmap') },
-    { title: 'Blog', extraText: '/blog', onAction: () => goto('/blog') },
-    { title: 'Privacy Policy', extraText: '/privacy-policy', onAction: () => goto('/privacy-policy') },
-    { title: 'Terms', extraText: '/terms', onAction: () => goto('/terms') },
-    { title: 'Open the map', extraText: Sites.App, onAction: openExternal(Sites.App) },
-    { title: 'GitHub', extraText: Socials.Github, onAction: openExternal(Socials.Github) },
-    { title: 'Self-hosting', extraText: SelfHost.Compose, onAction: openExternal(SelfHost.Compose) },
+    { title: 'Features', text: '/features', onAction: () => goto('/features') },
+    { title: 'Download', text: '/download', onAction: () => goto('/download') },
+    { title: 'Roadmap', text: '/roadmap', onAction: () => goto('/roadmap') },
+    { title: 'Blog', text: '/blog', onAction: () => goto('/blog') },
+    { title: 'Privacy Policy', text: '/privacy-policy', onAction: () => goto('/privacy-policy') },
+    { title: 'Terms', text: '/terms', onAction: () => goto('/terms') },
+    { title: 'Open the map', text: Sites.App, onAction: openExternal(Sites.App) },
+    { title: 'GitHub', text: Socials.Github, onAction: openExternal(Socials.Github) },
+    { title: 'Self-hosting', text: SelfHost.Compose, onAction: openExternal(SelfHost.Compose) },
   ];
 
   return defaultProvider({ name: 'Pages', types: ['page', 'pages', 'site'], actions });

@@ -19,7 +19,7 @@ export const feed = new Feed({
 for (const post of posts) {
   feed.addItem({
     title: post.title,
-    id: post.id,
+    id: `urn:uuid:${post.id}`,
     link: 'https://openmapx.org' + post.url,
     description: post.description,
     author: post.authors.map((author) => ({ name: author })),
