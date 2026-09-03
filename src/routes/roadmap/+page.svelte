@@ -4,13 +4,17 @@
   import Timeline from '$lib/components/Timeline.svelte';
   import { Heading, SiteMetadata, Stack, Text } from '@immich/ui';
   import {
+    mdiAirFilter,
     mdiAirplaneTakeoff,
     mdiAlertOctagonOutline,
     mdiBedOutline,
     mdiBusMultiple,
+    mdiCarClock,
+    mdiCarKey,
     mdiCarOutline,
     mdiCellphoneArrowDown,
     mdiCompassOutline,
+    mdiCompassRose,
     mdiDirections,
     mdiEvStation,
     mdiHistory,
@@ -18,6 +22,7 @@
     mdiLayersOutline,
     mdiMagnifyExpand,
     mdiMap,
+    mdiMapClockOutline,
     mdiMapMarkerOutline,
     mdiMapSearchOutline,
     mdiNavigationVariantOutline,
@@ -25,6 +30,7 @@
     mdiPuzzleOutline,
     mdiShareVariantOutline,
     mdiStarOutline,
+    mdiSubwayVariant,
     mdiTranslate,
     mdiWifiOff,
   } from '@mdi/js';
@@ -37,17 +43,17 @@
   const items: TimelineItem[] = [
     {
       icon: mdiCellphoneArrowDown,
-      title: 'Mobile UX polish',
-      description: 'Continue refining compact-screen planning, navigation, and settings flows.',
+      title: 'Native mobile app beta',
+      description: 'React Native shell with native background location, headless ground and transit navigation sessions, passkey auth, and local reproducible release pipeline.',
       done: false,
       getDateLabel: label('In progress'),
     },
     {
-      icon: mdiShareVariantOutline,
-      title: 'Shareable saved lists',
-      description: 'Share a saved-place list through a revocable read-only link that anyone can save their own copy of.',
+      icon: mdiCellphoneArrowDown,
+      title: 'Mobile UX polish',
+      description: 'Continue refining compact-screen planning, navigation, and settings flows.',
       done: false,
-      getDateLabel: label('Planned'),
+      getDateLabel: label('In progress'),
     },
     {
       icon: mdiWifiOff,
@@ -97,6 +103,54 @@
       description: 'Deep-link integration for restaurant reservations and table bookings with privacy-first affiliate support.',
       done: false,
       getDateLabel: label('Planned'),
+    },
+    {
+      icon: mdiShareVariantOutline,
+      title: 'Shareable lists & routes',
+      description: 'Publish saved-place lists or ground journeys as revocable live or snapshot share links with optional expiry.',
+      getDateLabel: onDate(2026, 9),
+    },
+    {
+      icon: mdiCompassRose,
+      title: 'Street alignment & smart framing',
+      description: 'Rotate the map to align with local street grids on demand, and frame the camera to respect active UI panels and visible viewports.',
+      getDateLabel: onDate(2026, 9),
+    },
+    {
+      icon: mdiCarKey,
+      title: 'Vehicles & parking',
+      description: 'Manage personal vehicles with EV battery specs, and save your parked position with one tap for walking directions back.',
+      getDateLabel: onDate(2026, 8),
+    },
+    {
+      icon: mdiAirFilter,
+      title: 'Air quality evidence',
+      description: 'Official regional standards (US EPA, EEA, UK DAQI, NAQI, HJ 633, AQHI), ground monitors, 48-hour forecasts, and dedicated raw pollutant map layers.',
+      getDateLabel: onDate(2026, 8),
+    },
+    {
+      icon: mdiCarClock,
+      title: 'Ride-hailing & on-demand transit',
+      description: 'Compare open GOFS 1.0 on-demand feeds with live wait times and fare quotes, plus direct handoffs to Uber, Lyft, Bolt, and FREENOW.',
+      getDateLabel: onDate(2026, 8),
+    },
+    {
+      icon: mdiWifiOff,
+      title: 'Offline map packages & guidance',
+      description: 'Download PMTiles vector packages with immutable glyph caching, and continue existing ground routes offline with turn-by-turn guidance.',
+      getDateLabel: onDate(2026, 8),
+    },
+    {
+      icon: mdiSubwayVariant,
+      title: 'Schematic transit maps',
+      description: 'Metro-style octilinear, geographic, and radial diagram overlays for commuter rail, metro, and tram networks rendered from OSM by LOOM.',
+      getDateLabel: onDate(2026, 8),
+    },
+    {
+      icon: mdiMapClockOutline,
+      title: 'Transit reachability & isochrones',
+      description: 'Interactive multimodal reachability bands and sampled exportable transit isochrone polygons via MOTIS.',
+      getDateLabel: onDate(2026, 8),
     },
     {
       icon: mdiImageMultipleOutline,

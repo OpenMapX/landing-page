@@ -37,7 +37,7 @@
   <Heading size="large" tag="h2">Use the app</Heading>
   <Text color="muted">
     No account needed — open OpenMapX in any modern browser, or install it for an app-like experience. Download
-    regions for offline vector maps and optionally keep recently opened places, routes, and searches available.
+    PMTiles vector packages for offline use and continue planned routes with voice guidance even when disconnected.
   </Text>
 </div>
 
@@ -57,7 +57,7 @@
 
   <Card color="secondary">
     <CardHeader>
-      <CardTitle>Install (PWA)</CardTitle>
+      <CardTitle>Install (PWA &amp; Mobile)</CardTitle>
       <CardDescription>Install the app and download map areas for offline use.</CardDescription>
     </CardHeader>
     <CardBody class="text-primary flex items-center justify-center align-middle">
@@ -71,7 +71,7 @@
 
 <div class="mb-4">
   <Heading size="large" tag="h2">Self-host</Heading>
-  <Text color="muted">Run the entire OpenMapX stack yourself with Docker and own your data end to end.</Text>
+  <Text color="muted">Run the entire OpenMapX stack yourself with Docker and own your data end to end, with services and integrations configured via our CLI.</Text>
 </div>
 
 <section class="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">

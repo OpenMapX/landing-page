@@ -20,7 +20,7 @@ export type TimelineItem = {
   title: string;
   description?: string;
   link?: { href: string; text: string };
-  done?: false;
+  done?: boolean;
   getDateLabel: (language: string) => string;
 };
 

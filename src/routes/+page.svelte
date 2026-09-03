@@ -24,7 +24,7 @@
   </Heading>
 
   <Text size="large">
-    OpenMapX brings search, road and EV routing, live transit navigation, and street-level imagery<br
+    OpenMapX brings search, road and EV routing, live transit navigation, ride-hailing, and street-level imagery<br
       class="hidden lg:block"
     />
     together on one fast, privacy-respecting map — built on open data, self-hostable, ad-free, and yours.
@@ -63,8 +63,9 @@
   <Heading size="title" tag="h2">Everything on one map</Heading>
 
   <Text size="large">
-    Search by text or voice, compare road, EV, and transit journeys, navigate turn by turn, check live road
-    conditions, and explore places, shared mobility, and weather — without ad tracking or profiling.
+    Search by text or voice, compare road, EV, and transit journeys, look up ride-hailing options, navigate turn by
+    turn, check live road conditions and air quality, save places, and explore shared mobility and weather — without ad
+    tracking or profiling.
   </Text>
 
   <Button size="large" href="/features" color="secondary">Explore all features</Button>
