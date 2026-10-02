@@ -63,9 +63,9 @@
   <Heading size="title" tag="h2">Everything on one map</Heading>
 
   <Text size="large">
-    Search by text or voice, compare road, EV, and transit journeys, look up ride-hailing options, navigate turn by
-    turn, check live road conditions and air quality, save places, and explore shared mobility and weather — without ad
-    tracking or profiling.
+    Find nearby places or famous landmarks by text or voice, compare road, EV, and transit journeys with cost and
+    emissions estimates, and navigate with junction guidance. Explore terrain and 3D buildings, check live conditions,
+    and save or share places — without ad tracking or profiling.
   </Text>
 
   <Button size="large" href="/features" color="secondary">Explore all features</Button>

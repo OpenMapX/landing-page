@@ -57,8 +57,8 @@
 
   <Card color="secondary">
     <CardHeader>
-      <CardTitle>Install (PWA &amp; Mobile)</CardTitle>
-      <CardDescription>Install the app and download map areas for offline use.</CardDescription>
+      <CardTitle>Install the web app (PWA)</CardTitle>
+      <CardDescription>Install from your browser and download map areas for offline use. The native iOS and Android app beta is still in preparation.</CardDescription>
     </CardHeader>
     <CardBody class="text-primary flex items-center justify-center align-middle">
       <Icon icon={mdiCellphoneArrowDown} size="4rem" class="m-4" />
@@ -71,7 +71,7 @@
 
 <div class="mb-4">
   <Heading size="large" tag="h2">Self-host</Heading>
-  <Text color="muted">Run the entire OpenMapX stack yourself with Docker and own your data end to end, with services and integrations configured via our CLI.</Text>
+  <Text color="muted">Run OpenMapX with Docker, configure services and integrations via the CLI, and monitor data coverage, freshness, and jobs in the admin console.</Text>
 </div>
 
 <section class="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
