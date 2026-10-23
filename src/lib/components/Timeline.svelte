@@ -1,7 +1,7 @@
 <script lang="ts">
   import { browser } from '$app/environment';
   import type { TimelineItem } from '$lib';
-  import { Card, CardBody, Checkbox, Icon, Link, Logo, Text } from '@immich/ui';
+  import { Card, Checkbox, Icon, Link, Logo, Text } from '@immich/ui';
 
   type Props = {
     items: TimelineItem[];
@@ -43,7 +43,7 @@
 
       <!-- card -->
       <Card color="secondary" class={isLast ? '' : 'my-2'}>
-        <CardBody>
+        <div class="immich-scrollbar h-full w-full overflow-auto p-4">
           <div class="flex flex-col gap-2">
             <!-- header -->
             <div class="flex w-full justify-between gap-2">
@@ -84,7 +84,7 @@
               </Text>
             </div>
           </div>
-        </CardBody>
+        </div>
       </Card>
     </li>
   {/each}

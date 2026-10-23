@@ -1,57 +1,78 @@
 ---
 layout: LegalPage
-title: Privacy Policy
-description: How the OpenMapX website collects, uses, and protects your information.
-updatedAt: 2026-06-09
+title: Website privacy policy
+description: How this website handles request data and browser preferences.
+updatedAt: 2026-10-23
 ---
 
 <script>
   import { legalConfig } from '$lib/legalConfig';
 </script>
 
-### 1. Scope of This Policy
+## 1. Scope
 
-This Privacy Policy applies to the OpenMapX marketing website at [openmapx.org](https://openmapx.org) ("we", "our", or "us") and covers our collection, use, and disclosure of your information. It does not cover any third-party websites or services you reach through links on this site. The OpenMapX application at [openmapx.com](https://openmapx.com) processes data differently and has its own, more detailed privacy policy.
+This policy covers the OpenMapX website at [openmapx.org](https://openmapx.org).
+The application at openmapx.com has a separate [privacy policy](https://openmapx.com/privacy)
+covering accounts, saved places, location use, and data providers. Other OpenMapX
+instances are operated independently and have their own privacy notices.
 
-### 2. Controller
+Following a link to GitHub, the documentation, the map application, or another
+website takes you to a separate service. Its operator and privacy policy apply
+there.
 
-The controller responsible for data processing on this website, within the meaning of the GDPR, is:
+## 2. Controller and contact
+
+The controller responsible for this website is:
 
 {legalConfig.name}\
 {legalConfig.street}\
 {legalConfig.postalCode} {legalConfig.city}, {legalConfig.country}\
 Email: <a href="mailto:{legalConfig.privacyEmail}">{legalConfig.privacyEmail}</a>
 
-A Data Protection Officer is not legally required and has therefore not been appointed. For any data-protection matters, contact us at the address above.
+Send data-protection questions or requests to this address.
 
-### 3. What We Collect
+## 3. Request data and hosting
 
-This site is statically hosted. When you visit it, our server automatically processes standard request data — your IP address, the date and time of the request, the requested page, the referrer, and your browser and operating system. We use this solely to operate and secure the site. The legal basis is Art. 6(1)(f) GDPR (our legitimate interest in a functional, secure website). These server logs are automatically deleted after {legalConfig.logRetentionDays} days.
+This is a static website. Serving it involves processing your IP address and
+request details, such as the time, requested URL, referrer when supplied, and
+browser user-agent. Request logs help operate the site and investigate errors
+or abuse. The legal basis is Art. 6(1)(f) GDPR: our legitimate interest in
+providing and securing the website.
+
+The stated request-log retention period is {legalConfig.logRetentionDays} days.
 
 {#if legalConfig.hostingProvider}
-Our website is hosted by {legalConfig.hostingProvider}, which processes the above server-log data on our behalf and strictly on our instructions (a processor within the meaning of Art. 28 GDPR). A data-processing agreement is in place. {#if legalConfig.hostingLocations}The data centres are located in {legalConfig.hostingLocations}.{/if}
+The hosting provider is {legalConfig.hostingProvider}.
+{#if legalConfig.hostingLocations}The hosting locations are {legalConfig.hostingLocations}.{/if}
+The provider processes request data to host and serve the website.
 {/if}
 
-### 4. Cookies and Local Storage
+## 4. Browser storage and assets
 
-We use first-party storage only, and only for functionality. If you switch between light and dark mode, your choice is saved in your browser's local storage so the site remembers it across visits — this contains no personal data. Fonts and all other assets are served from our own server, so this site makes no requests to third-party content-delivery networks. We set **no** analytics, tracking, or advertising cookies, and therefore show no cookie-consent banner.
+The site uses local storage for functional preferences, including your light or
+dark theme choice. You can remove these preferences by clearing this site's
+browser data. This website does not offer user accounts or store the places
+you save in the OpenMapX application.
 
-### 5. What We Do Not Do
+Fonts, scripts, and images are served with the site. We do not load third-party
+analytics or advertising scripts, set analytics or advertising cookies, or
+build advertising profiles from visits to this website.
 
-We do not sell your data, run third-party ad trackers, build advertising profiles, share your personal data with third parties for marketing purposes, or carry out automated decision-making (including profiling) within the meaning of Art. 22 GDPR.
+## 5. Your rights
 
-### 6. Your Rights
+Under the GDPR, you may have rights to access, correct, erase, restrict, or
+receive a portable copy of your personal data, and to object to processing
+based on legitimate interests. These rights apply subject to the conditions
+in the GDPR. You also have the right to complain to a data-protection
+supervisory authority.
 
-Under the GDPR you have the right to access, rectify, erase, restrict, and port your personal data, and to object to processing based on legitimate interests. You also have the right to lodge a complaint with a data-protection supervisory authority. To exercise any of these rights, contact us at <a href="mailto:{legalConfig.privacyEmail}">{legalConfig.privacyEmail}</a>.
+Contact <a href="mailto:{legalConfig.privacyEmail}">{legalConfig.privacyEmail}</a>
+to make a request about this website. For data held by an OpenMapX application
+instance, contact that instance's operator using its privacy notice.
 
-### 7. Security
+## 6. Security and changes
 
-We are committed to safeguarding your information. While no system is 100% secure, we take appropriate measures — including encrypted connections (TLS/HTTPS) — to protect it from unauthorized access, use, alteration, or destruction.
+We use technical and organizational measures to protect the website and request
+data. No internet service can guarantee complete security.
 
-### 8. Changes to This Policy
-
-We may update this Privacy Policy from time to time. If we make any changes, we will revise the "Last updated" date at the top of this page.
-
-### 9. Contact
-
-For any questions about this Privacy Policy, contact us at <a href="mailto:{legalConfig.privacyEmail}">{legalConfig.privacyEmail}</a>.
+When this policy changes, we update the date shown above.

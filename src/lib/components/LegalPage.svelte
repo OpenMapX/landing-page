@@ -1,6 +1,6 @@
 <script lang="ts">
   import { siteMetadata } from '$lib';
-  import { Card, CardBody, Container, Heading, SiteMetadata, Text } from '@immich/ui';
+  import { Card, Container, Heading, SiteMetadata, Text } from '@immich/ui';
   import { DateTime } from 'luxon';
   import type { Snippet } from 'svelte';
 
@@ -32,8 +32,8 @@
   </section>
 
   <Card color="secondary" class="mt-8">
-    <CardBody class="pt-0">
+    <div class="immich-scrollbar h-full w-full overflow-auto p-4 pt-0">
       {@render children?.()}
-    </CardBody>
+    </div>
   </Card>
 </Container>
