@@ -7,10 +7,10 @@
   import { siGithub } from 'simple-icons';
 
   const supportItems = [
-    { href: Socials.Github, text: 'Star on GitHub', icon: siGithub.path },
+    { href: Socials.Contributing, text: 'Contribute to OpenMapX', icon: siGithub.path },
     { href: SelfHost.Compose, text: 'Self-host with Docker', icon: mdiServerNetworkOutline },
     { href: '/features', text: 'Explore features', icon: mdiMapSearchOutline },
-    { href: '/blog', text: 'Read the blog', icon: mdiOpenInNew },
+    { href: Socials.Issues, text: 'Report a problem', icon: siGithub.path },
   ];
 </script>
 
@@ -20,14 +20,12 @@
   <Logo variant="stacked" />
 
   <Heading size="title" tag="h1" fontWeight="extra-bold">
-    Self-hostable maps, built on <span class="text-primary">open data &amp; open source</span>
+    Open-source maps <span class="text-primary">you can host yourself</span>
   </Heading>
 
   <Text size="large">
-    OpenMapX brings search, road and EV routing, live transit navigation, ride-hailing, and street-level imagery<br
-      class="hidden lg:block"
-    />
-    together on one fast, privacy-respecting map — built on open data, self-hostable, ad-free, and yours.
+    Find places, plan a journey, and follow the route with OpenMapX.
+    Explore a map built on OpenStreetMap and other open datasets, or run it on your own server.
   </Text>
 
   <div class="flex flex-col gap-4">
@@ -45,38 +43,88 @@
     </div>
   </div>
 
-  <div class="relative w-full max-w-4xl">
-    <div class="bg-primary/10 absolute inset-x-8 top-10 -z-10 h-3/4 rounded-full blur-3xl"></div>
-    <img
-      src="/img/screenshot-dark.webp"
-      alt="OpenMapX map"
-      class="hidden dark:block rounded-xl border shadow-xl"
-    />
-    <img
-      src="/img/screenshot-light.webp"
-      alt="OpenMapX map"
-      class="block dark:hidden rounded-xl border shadow-xl"
-    />
-  </div>
-
   <hr class="m-2 w-full max-w-(--breakpoint-sm) border-t" />
-  <Heading size="title" tag="h2">Everything on one map</Heading>
+  <Heading size="title" tag="h2">Find somewhere worth going</Heading>
 
   <Text size="large">
-    Find nearby places or famous landmarks by text or voice, compare road, EV, and transit journeys with cost and
-    emissions estimates, and navigate with junction guidance. Explore terrain and 3D buildings, check live conditions,
-    and save or share places — without ad tracking or profiling.
+    Look up an address or a landmark, find a café nearby, or check the next departures from a station.
+    Place details bring together opening hours, accessibility, photos, and contact information where sources provide them.
+    Save places to your own lists and bring your favorites over from a Google Takeout export.
   </Text>
 
-  <Button size="large" href="/features" color="secondary">Explore all features</Button>
-
-  <hr class="m-8 w-full max-w-(--breakpoint-sm) border-t" />
-  <Heading size="title" tag="h2">Free and open source</Heading>
+  <Heading size="large" tag="h2">Plan the trip and follow it</Heading>
 
   <Text size="large">
-    OpenMapX is open source and built on open data. Star it on <Link href={Socials.Github}>GitHub</Link>,
-    <Link href={SelfHost.Compose}>self-host</Link> it on your own server, or follow along on the
-    <Link href="/blog">blog</Link>.
+    Get driving, cycling, or walking directions, plan EV charging stops, or compare public transport journeys.
+    Turn-by-turn guidance helps along the road; transit navigation follows walking legs, departures, and transfers.
+    Live information depends on the feeds available for your journey.
+  </Text>
+
+  <Heading size="large" tag="h2">See more of the map</Heading>
+
+  <Text size="large">
+    Explore terrain and 3D buildings, look around with Panoramax street-level photos, and switch on layers for weather,
+    air quality, or road conditions. Coverage varies by source and by the integrations enabled on the server.
+  </Text>
+
+  <Button size="large" href="/features" color="secondary">See what OpenMapX can do</Button>
+
+  <hr class="m-8 w-full max-w-(--breakpoint-sm) border-t" />
+  <Heading size="title" tag="h2">Choose what runs on your server</Heading>
+
+  <Text size="large">
+    Start with the core app, then add the services you need for search, routing, transit, or map tiles.
+    Use your own data and engines, connect hosted providers, or combine the two.
+    The admin panel and CLI let you configure integrations and manage data updates.
+  </Text>
+
+  <Text>
+    Self-hosting takes a Linux server, Docker, and some setup. The services and regions you choose determine
+    how much memory, storage, and import time you need. Start with the
+    <Link href={SelfHost.Requirements}>requirements</Link> and the
+    <Link href={SelfHost.Compose}>installation guide</Link>.
+  </Text>
+
+  <hr class="m-8 w-full max-w-(--breakpoint-sm) border-t" />
+  <Heading size="title" tag="h2">Common questions</Heading>
+
+  <VStack gap={4}>
+    <Heading size="large" tag="h3">Do I need an account?</Heading>
+    <Text>
+      You can browse the map, search, and get directions without signing in.
+      An account lets you save and import places, create share links, and prepare offline map areas.
+    </Text>
+
+    <Heading size="large" tag="h3">Can I use it offline?</Heading>
+    <Text>
+      On servers with offline map preparation enabled, you can download supported areas and keep following driving, motorcycle, cycling, or walking directions
+      after starting navigation online. New routes, rerouting, search, and live updates need a connection.
+      See the <Link href="/download#offline">offline guide</Link> before you set off.
+    </Text>
+
+    <Heading size="large" tag="h3">What happens to my data?</Heading>
+    <Text>
+      OpenMapX has no advertising trackers or third-party analytics. Most provider requests go through the server;
+      some map assets and optional services contact external providers. The operator of your chosen instance
+      can read account data such as saved places. Read that instance's privacy policy, including the
+      <Link href={Sites.AppPrivacy}>policy for openmapx.com</Link>.
+    </Text>
+
+    <Heading size="large" tag="h3">Is OpenMapX free?</Heading>
+    <Text>
+      The software is free and open source. The app uses AGPL-3.0-or-later; selected libraries and the extension SDK
+      use Apache-2.0. Hosting, storage, and any paid providers you choose have their own costs.
+      The <Link href={Socials.Licensing}>licensing overview</Link> has the details.
+    </Text>
+  </VStack>
+
+  <hr class="m-8 w-full max-w-(--breakpoint-sm) border-t" />
+  <Heading size="title" tag="h2">Help build OpenMapX</Heading>
+
+  <Text size="large">
+    OpenMapX is experimental and still has rough edges. Try it in your area and tell us what works and what doesn't.
+    Bug reports, documentation fixes, translations, and new integrations all help.
+    Follow development on <Link href={Socials.Github}>GitHub</Link> or read the <Link href="/roadmap">roadmap</Link>.
   </Text>
 
   <div class="grid w-full max-w-(--breakpoint-sm) grid-cols-1 gap-4 md:grid-cols-2">

@@ -38,6 +38,10 @@
     <Text color="muted" size="small">— {authors.join(', ')}</Text>
   </div>
 
+  {#if post.modifiedAt}
+    <Text color="muted" size="small">Updated {post.modifiedAt.toLocaleString(DateTime.DATE_FULL)}</Text>
+  {/if}
+
   <Markdown.Paragraph><em>{description}</em></Markdown.Paragraph>
 
   <BlogTypeBadge class="mt-2" size="small" type={post.type} />
