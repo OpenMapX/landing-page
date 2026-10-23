@@ -29,7 +29,8 @@ The controller responsible for this website is:
 {legalConfig.postalCode} {legalConfig.city}, {legalConfig.country}\
 Email: <a href="mailto:{legalConfig.privacyEmail}">{legalConfig.privacyEmail}</a>
 
-Send data-protection questions or requests to this address.
+We are not required to designate a data protection officer for this website.
+Send data-protection questions or requests to the address above.
 
 ## 3. Request data and hosting
 
@@ -39,12 +40,13 @@ browser user-agent. Request logs help operate the site and investigate errors
 or abuse. The legal basis is Art. 6(1)(f) GDPR: our legitimate interest in
 providing and securing the website.
 
-The stated request-log retention period is {legalConfig.logRetentionDays} days.
+We delete request logs after {legalConfig.logRetentionDays} days.
 
 {#if legalConfig.hostingProvider}
 The hosting provider is {legalConfig.hostingProvider}.
 {#if legalConfig.hostingLocations}The hosting locations are {legalConfig.hostingLocations}.{/if}
 The provider processes request data to host and serve the website.
+A data-processing agreement is in place where required.
 {/if}
 
 ## 4. Browser storage and assets

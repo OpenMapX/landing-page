@@ -92,17 +92,19 @@ The crawl found that `robots.txt` pointed to a missing sitemap. The new static
 sitemap lists the ten existing public pages; future page/post changes must keep
 it up to date.
 
-## Deployment facts that require operator evidence
+## Operator confirmations
 
-The website's operator address, responsible person, hosting locations, actual
-log retention and deletion, processor agreements, and any DPO obligations cannot
-be verified from this repository. The revised notice removes unsupported
-assertions that a DPA exists or that no DPO is required. It retains the
-configured retention period as the stated policy and removes the assertion
-that this setting automatically deletes logs. `.env.example` and the README
-explain that the notice does not configure the logging infrastructure.
+On 23 October 2026, the project owner confirmed that the configured request-log
+retention period is enforced, hosting data-processing agreements are in place
+where required, and no data protection officer must be designated for this
+website. The privacy notice now states those confirmed facts. Their provenance
+is the operator's confirmation; this content review did not audit the hosting
+contracts or logging infrastructure.
 
-Confirm these facts and publish matching operator details before deployment.
+Keep the configured operator identity, contact details, and hosting locations
+current. `.env.example` and the README explain that the retention value in the
+notice does not itself configure log deletion.
+
 No private environment file, personal address, location archive, or account
 content was used in code or screenshots. Rendering uses placeholders unless
 synthetic preview values are explicitly supplied.
@@ -134,5 +136,7 @@ existing tests cover a smoke assertion and blog-feed serialization; they do not
 prove the truth of product claims. Those were checked separately against source.
 
 No product database, live journey, upstream provider, native device, deployment,
-or retention-enforcement acceptance is claimed. There are no source changes
-in the application repository, dependency updates, or new design tokens.
+or independent retention-enforcement acceptance is claimed. The retention,
+processor-agreement, and DPO facts rely on the operator confirmation above.
+There are no source changes in the application repository, dependency updates,
+or new design tokens.
