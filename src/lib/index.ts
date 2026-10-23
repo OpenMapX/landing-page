@@ -5,7 +5,7 @@ import { DateTime } from 'luxon';
 
 export const siteMetadata = {
   title: 'OpenMapX',
-  description: 'Self-hostable open-data maps with search, EV and road routing, transit navigation, and live conditions.',
+  description: 'Open-source maps you can host yourself. Find places, plan road and transit journeys, and explore open map data with OpenMapX.',
   imageUrl: '/img/social-preview.png',
 };
 

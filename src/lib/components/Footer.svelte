@@ -8,7 +8,7 @@
       heading: 'Product',
       links: [
         { href: '/features', text: 'Features' },
-        { href: '/download', text: 'Download' },
+        { href: '/download', text: 'Use OpenMapX' },
         { href: '/roadmap', text: 'Roadmap' },
         { href: '/blog', text: 'Blog' },
       ],
@@ -17,6 +17,9 @@
       heading: 'Project',
       links: [
         { href: Socials.Github, text: 'GitHub' },
+        { href: Socials.Contributing, text: 'Contributing' },
+        { href: Socials.Issues, text: 'Report a problem' },
+        { href: Socials.Licensing, text: 'Software licenses' },
         { href: SelfHost.Compose, text: 'Self-hosting' },
         { href: Sites.Docs, text: 'Documentation' },
       ],
@@ -24,10 +27,12 @@
     {
       heading: 'Legal',
       links: [
-        { href: '/privacy-policy', text: 'Privacy Policy' },
-        { href: '/terms', text: 'Terms' },
+        { href: '/privacy-policy', text: 'Website privacy' },
+        { href: Sites.AppPrivacy, text: 'App privacy' },
+        { href: '/terms', text: 'Website terms' },
+        { href: Sites.AppTerms, text: 'App terms' },
         { href: '/trademark', text: 'Trademark' },
-        { href: '/imprint', text: 'Legal Notice' },
+        { href: '/imprint', text: 'Legal notice' },
       ],
     },
     {
@@ -91,7 +96,7 @@
         </div>
 
         <Text size="small" class="text-muted text-center">
-          Website design gratefully adapted from <Link
+          Website adapted from <Link
             href="https://github.com/immich-app/static-pages"
             target="_blank"
             rel="noopener noreferrer">Immich</Link

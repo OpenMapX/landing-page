@@ -96,11 +96,9 @@
         <AnnouncementBanner color="warning">
           {#snippet content()}
             <div class="text-center">
-              OpenMapX is still experimental — both the
-              <Link href={Socials.Github}>code</Link>
-              and the live deployment at
-              <Link href={Sites.App}>openmapx.com</Link>
-              are works in progress, so expect rough edges.
+              OpenMapX is experimental. Features and coverage are still changing.
+              <Link href={Socials.Issues}>Report a problem</Link> or
+              <Link href="/roadmap">follow development</Link>.
             </div>
           {/snippet}
         </AnnouncementBanner>
@@ -123,18 +121,9 @@
 
           <div class="hidden place-items-center gap-1 lg:flex">
             <Button href="/features" variant="ghost" color={withActiveColor('/features')}>Features</Button>
-            <Button href="/download" variant="ghost" color={withActiveColor('/download')}>Download</Button>
+            <Button href="/download" variant="ghost" color={withActiveColor('/download')}>Use OpenMapX</Button>
             <Button href="/roadmap" variant="ghost" color={withActiveColor('/roadmap')}>Roadmap</Button>
-            <Button href="/blog" variant="ghost" color={withActiveColor('/blog')}>Blog</Button>
-            <Button
-              leadingIcon={siGithub.path}
-              trailingIcon={mdiOpenInNew}
-              href={Socials.Github}
-              color="secondary"
-              variant="ghost"
-            >
-              GitHub
-            </Button>
+            <Button href={Sites.Docs} variant="ghost" color="secondary">Docs</Button>
           </div>
           <div class="flex place-items-center justify-end gap-2">
             <div class="hidden lg:flex">
@@ -160,9 +149,10 @@
           Open the map
         </Button>
         <NavbarItem title="Features" href="/features" icon={mdiStarShootingOutline} />
-        <NavbarItem title="Download" href="/download" icon={mdiDownload} />
+        <NavbarItem title="Use OpenMapX" href="/download" icon={mdiDownload} />
         <NavbarItem title="Roadmap" href="/roadmap" icon={mdiChartGantt} />
         <NavbarItem title="Blog" href="/blog" icon={mdiPostOutline} />
+        <NavbarItem title="Documentation" href={Sites.Docs} icon={mdiPostOutline} />
         <NavbarItem title="GitHub" href={Socials.Github} icon={siGithub.path} />
       </div>
     </AppShellSidebar>

@@ -2,374 +2,106 @@
   import type { TimelineItem } from '$lib';
   import { siteMetadata } from '$lib';
   import Timeline from '$lib/components/Timeline.svelte';
-  import { Heading, SiteMetadata, Stack, Text } from '@immich/ui';
+  import { Sites, Socials } from '$lib/constants';
+  import { Heading, Link, SiteMetadata, Stack, Text } from '@immich/ui';
   import {
-    mdiAirFilter,
-    mdiAirplaneTakeoff,
-    mdiAlertOctagonOutline,
-    mdiBedOutline,
-    mdiBusMultiple,
-    mdiCarClock,
-    mdiCarKey,
-    mdiCarOutline,
-    mdiChartBoxOutline,
-    mdiCellphoneArrowDown,
-    mdiCompassOutline,
-    mdiCompassRose,
-    mdiDirections,
-    mdiEvStation,
-    mdiHistory,
-    mdiImageMultipleOutline,
-    mdiLayersOutline,
-    mdiLeaf,
-    mdiMagnifyExpand,
-    mdiMap,
-    mdiMapClockOutline,
-    mdiMapMarkerOutline,
-    mdiMapSearchOutline,
-    mdiNavigationVariantOutline,
-    mdiPalette,
-    mdiPuzzleOutline,
-    mdiShareVariantOutline,
-    mdiShieldLockOutline,
-    mdiStarOutline,
-    mdiSubwayVariant,
-    mdiTranslate,
-    mdiWifiOff,
+    mdiBusMultiple, mdiCellphoneArrowDown, mdiCompassOutline, mdiEvStation,
+    mdiHistory, mdiMapMarkerOutline, mdiMapSearchOutline, mdiNavigationVariantOutline,
+    mdiPuzzleOutline, mdiShareVariantOutline, mdiWifiOff,
   } from '@mdi/js';
 
-  const onDate = (year: number, month: number) => (language: string) =>
-    new Date(year, month - 1, 1).toLocaleDateString(language, { year: 'numeric', month: 'short' });
   const label = (text: string) => () => text;
 
-  // Newest / future first.
-  const items: TimelineItem[] = [
+  const implemented: TimelineItem[] = [
     {
-      icon: mdiCellphoneArrowDown,
-      title: 'Native mobile app beta',
-      description: 'Prepare the React Native app for a public beta, with background navigation and passkeys; store distribution and real-device beta validation remain outstanding.',
-      done: false,
-      getDateLabel: label('In progress'),
+      icon: mdiMapSearchOutline, title: 'Search and everyday journeys',
+      description: 'Place search, nearby discovery, road and EV planning, public transport, and turn-by-turn guidance are in the project. Coverage depends on the providers and data enabled on each server.',
+      getDateLabel: label('Implemented'),
+      link: { href: '/features', text: 'Features' },
     },
     {
-      icon: mdiCellphoneArrowDown,
-      title: 'Mobile UX polish',
-      description: 'Continue refining compact-screen planning, navigation, and settings flows.',
-      done: false,
-      getDateLabel: label('In progress'),
+      icon: mdiShareVariantOutline, title: 'Saved-place imports and sharing',
+      description: 'Import supported saved-place files, keep lists and labels, export individual lists, and share lists or ground journeys through revocable links.',
+      getDateLabel: label('Implemented'),
+      link: { href: Sites.Docs + '/features/saved-places/', text: 'Guide' },
     },
     {
-      icon: mdiWifiOff,
-      title: 'Offline trip packs',
-      description: 'Pin a planned route, guidance, waypoints, destination details, and corridor map tiles for dependable offline journeys.',
-      done: false,
-      getDateLabel: label('Planned'),
+      icon: mdiMapMarkerOutline, title: 'OpenStreetMap corrections',
+      description: 'Review and publish supported changes to existing OpenStreetMap places with your linked OSM account. New places and geometry changes use OpenStreetMap tools.',
+      getDateLabel: label('Implemented'),
+      link: { href: Sites.Docs + '/features/osm-contributions/', text: 'Guide' },
     },
     {
-      icon: mdiHistory,
-      title: 'Recent activity & contributions',
-      description: 'Build on shipped local recent searches with a unified view of recent places, routes, journeys, and the status of community reports.',
-      done: false,
-      getDateLabel: label('Planned'),
+      icon: mdiHistory, title: 'Optional personal timeline',
+      description: 'View day history from a connected external or operator-managed Dawarich account. Location collection and editing stay in Dawarich.',
+      getDateLabel: label('Implemented'),
+      link: { href: Sites.Docs + '/features/personal-timeline/', text: 'Guide' },
     },
     {
-      icon: mdiEvStation,
-      title: 'Multi-stop EV planning',
-      description: 'Plan charge stops around the stops you already need — meals, hotels, pickups — while tracking state of charge across the whole journey.',
-      done: false,
-      getDateLabel: label('Planned'),
+      icon: mdiWifiOff, title: 'Offline maps and existing-route guidance',
+      description: 'Download supported map areas and continue driving, motorcycle, cycling, or walking navigation started online. This does not provide new offline routing, rerouting, search, or live updates.',
+      getDateLabel: label('Implemented'),
+      link: { href: '/download#offline', text: 'Limits and setup' },
     },
     {
-      icon: mdiWifiOff,
-      title: 'Offline POI search & outbox',
-      description: 'Download areas with a local POI index and queue edits offline to replay when connected.',
-      done: false,
-      getDateLabel: label('Planned'),
+      icon: mdiPuzzleOutline, title: 'Self-hosting and extensions',
+      description: 'Configure services and integrations, prepare data, inspect coverage and freshness, and install extension bundles through the admin panel and CLI.',
+      getDateLabel: label('Implemented'),
+      link: { href: Sites.Docs, text: 'Documentation' },
+    },
+  ];
+
+  const development: TimelineItem[] = [
+    {
+      icon: mdiCellphoneArrowDown, title: 'Native iOS and Android apps',
+      description: 'Native shell and release tooling are in development. Store distribution and real-device release validation are separate work; use the installable web app in the meantime.',
+      done: false, getDateLabel: label('In development'),
+      link: { href: '/download', text: 'Use the web app' },
     },
     {
-      icon: mdiCarOutline,
-      title: 'Commute dashboard & live ETAs',
-      description: 'Get automatic live ETAs and traffic updates for home and work destinations directly on app load.',
-      done: false,
-      getDateLabel: label('Planned'),
+      icon: mdiNavigationVariantOutline, title: 'Mobile usability',
+      description: 'Keep improving planning, navigation, and settings on small screens as people use the app and report problems.',
+      done: false, getDateLabel: label('Ongoing'),
+      link: { href: Socials.Issues, text: 'Report feedback' },
+    },
+  ];
+
+  const ideas: TimelineItem[] = [
+    {
+      icon: mdiWifiOff, title: 'Offline trip packs and place search',
+      description: 'Bundle a trip with destination details and map coverage, add a local place index, and support queued contributions when connectivity returns.',
+      done: false, getDateLabel: label('Idea'),
     },
     {
-      icon: mdiBusMultiple,
-      title: 'Crowd-sourced transit tracking',
-      description: 'Stream rider GPS data to synthesize live delays (GTFS-RT) on transit lines with no official feeds.',
-      done: false,
-      getDateLabel: label('Planned'),
+      icon: mdiEvStation, title: 'EV planning around your stops',
+      description: 'Account for meals, overnight stays, and other planned stops when choosing charging stops across a journey.',
+      done: false, getDateLabel: label('Idea'),
     },
     {
-      icon: mdiStarOutline,
-      title: 'Table reservations & deep links',
-      description: 'Deep-link integration for restaurant reservations and table bookings with privacy-first affiliate support.',
-      done: false,
-      getDateLabel: label('Planned'),
+      icon: mdiHistory, title: 'Recent activity and contribution status',
+      description: 'Build on local recent searches with a view of recent places and journeys and the status of submitted reports.',
+      done: false, getDateLabel: label('Idea'),
     },
     {
-      icon: mdiAlertOctagonOutline,
-      title: 'Detailed road-condition effects',
-      description: 'Read closures, lane restrictions, speed limits, delays, and vehicle restrictions with their validity windows; apply routing effects only when current data is verified against the road network.',
-      getDateLabel: onDate(2026, 10),
+      icon: mdiCompassOutline, title: 'Commute planning',
+      description: 'Show useful journey options and current travel times for Home and Work when opening the app.',
+      done: false, getDateLabel: label('Idea'),
     },
     {
-      icon: mdiMapSearchOutline,
-      title: 'Landmark search & POI previews',
-      description: 'Find famous places independently of the current map view, including misspelled names when the landmark index is enabled, and preview map POIs on desktop hover.',
-      getDateLabel: onDate(2026, 10),
+      icon: mdiBusMultiple, title: 'Community transit tracking',
+      description: 'Rider-contributed live transit data needs further upstream and privacy clarification before it can be considered for implementation. This capability is not available.',
+      done: false, getDateLabel: label('Needs research'),
     },
     {
-      icon: mdiMapSearchOutline,
-      title: 'Nearby ranking & recent searches',
-      description: 'Rank suggestions by name match, nearness, and prominence, show distances, and keep clearable recent searches on the current device.',
-      getDateLabel: onDate(2026, 9),
-    },
-    {
-      icon: mdiLayersOutline,
-      title: 'Terrain relief & close-up 3D',
-      description: 'Add elevation shading, contours, richer POI and park labels, and buildings that appear in 3D when the map is tilted.',
-      getDateLabel: onDate(2026, 9),
-    },
-    {
-      icon: mdiNavigationVariantOutline,
-      title: 'Motorway junction guidance',
-      description: 'Show exit signs and lane diagrams at motorway splits, with optional Panoramax approach photos where coverage is available.',
-      getDateLabel: onDate(2026, 9),
-    },
-    {
-      icon: mdiCarKey,
-      title: 'Arrival & walking handoff',
-      description: 'Find nearby parking, save the parked position, and start walking guidance for the last stretch to the destination.',
-      getDateLabel: onDate(2026, 9),
-    },
-    {
-      icon: mdiLeaf,
-      title: 'Route cost & emissions estimates',
-      description: 'Compare energy, costs, and carbon emissions with editable vehicle and price assumptions, visible provenance, and coverage caveats.',
-      getDateLabel: onDate(2026, 9),
-    },
-    {
-      icon: mdiShieldLockOutline,
-      title: 'Personal data requests & deletion',
-      description: 'Request personal-data access or portability exports, track their progress, and request deletion, with safeguards against restoring erased accounts.',
-      getDateLabel: onDate(2026, 9),
-    },
-    {
-      icon: mdiChartBoxOutline,
-      title: 'Operator coverage & data workflows',
-      description: 'Inspect regional capabilities, data freshness, and routing readiness in the admin dashboard, and follow data jobs through live progress events.',
-      getDateLabel: onDate(2026, 9),
-    },
-    {
-      icon: mdiShareVariantOutline,
-      title: 'Shareable lists & routes',
-      description: 'Publish saved-place lists or ground journeys as revocable live or snapshot share links with optional expiry.',
-      getDateLabel: onDate(2026, 9),
-    },
-    {
-      icon: mdiCompassRose,
-      title: 'Street alignment & smart framing',
-      description: 'Rotate the map to align with local street grids on demand, and frame the camera to respect active UI panels and visible viewports.',
-      getDateLabel: onDate(2026, 9),
-    },
-    {
-      icon: mdiCarKey,
-      title: 'Vehicles & parking',
-      description: 'Manage personal vehicles with EV battery specs, and save your parked position with one tap for walking directions back.',
-      getDateLabel: onDate(2026, 8),
-    },
-    {
-      icon: mdiAirFilter,
-      title: 'Air quality evidence',
-      description: 'Official regional standards (US EPA, EEA, UK DAQI, NAQI, HJ 633, AQHI), ground monitors, 48-hour forecasts, and dedicated raw pollutant map layers.',
-      getDateLabel: onDate(2026, 8),
-    },
-    {
-      icon: mdiCarClock,
-      title: 'Ride-hailing & on-demand transit',
-      description: 'Compare open GOFS 1.0 on-demand feeds with live wait times and fare quotes, plus direct handoffs to Uber, Lyft, Bolt, and FREENOW.',
-      getDateLabel: onDate(2026, 8),
-    },
-    {
-      icon: mdiWifiOff,
-      title: 'Offline map packages & guidance',
-      description: 'Download PMTiles vector packages with immutable glyph caching, and continue existing ground routes offline with turn-by-turn guidance.',
-      getDateLabel: onDate(2026, 8),
-    },
-    {
-      icon: mdiSubwayVariant,
-      title: 'Schematic transit maps',
-      description: 'Metro-style octilinear, geographic, and radial diagram overlays for commuter rail, metro, and tram networks rendered from OSM by LOOM.',
-      getDateLabel: onDate(2026, 8),
-    },
-    {
-      icon: mdiMapClockOutline,
-      title: 'Transit reachability & isochrones',
-      description: 'Interactive multimodal reachability bands and sampled exportable transit isochrone polygons via MOTIS.',
-      getDateLabel: onDate(2026, 8),
-    },
-    {
-      icon: mdiImageMultipleOutline,
-      title: 'Panoramax street-level imagery',
-      description: 'Panoramax becomes the primary imagery provider, served through a proxied panoramic viewer; Mapillary stays an operator opt-in.',
-      getDateLabel: onDate(2026, 7),
-    },
-    {
-      icon: mdiEvStation,
-      title: 'EV route & charge planning',
-      description: 'Vehicle-aware charge stops, state-of-charge targets, connectors, network preferences, availability, energy, time, and price estimates.',
-      getDateLabel: onDate(2026, 7),
-    },
-    {
-      icon: mdiBusMultiple,
-      title: 'Live transit navigation',
-      description: 'Walk and ride guidance, live vehicle progress, boarding departures, transfer risk and alternatives, service alerts, and get-off alarms.',
-      getDateLabel: onDate(2026, 7),
-    },
-    {
-      icon: mdiAlertOctagonOutline,
-      title: 'Crowd reports & live traffic',
-      description: 'Privacy-preserving community reports with approach voting, plus a live traffic-flow overlay and delay-aware ETAs.',
-      getDateLabel: onDate(2026, 7),
-    },
-    {
-      icon: mdiPuzzleOutline,
-      title: 'Extensions & custom overlays',
-      description: 'Extend the map with a unified extensions store, prebuilt developer SDK, standalone CLI, and custom overlay support.',
-      getDateLabel: onDate(2026, 6),
-    },
-    {
-      icon: mdiAlertOctagonOutline,
-      title: 'Road conditions',
-      description: 'Official closures, roadworks, and incidents on the map, with time-aware avoidance while routing.',
-      getDateLabel: onDate(2026, 6),
-    },
-    {
-      icon: mdiMagnifyExpand,
-      title: 'Voice & natural-language search',
-      description: 'Browser voice input plus local-first structured place search with optional consent-gated AI providers.',
-      getDateLabel: onDate(2026, 6),
-    },
-    {
-      icon: mdiMapMarkerOutline,
-      title: 'Overture POI data',
-      description: 'Locally ingested Overture Places merged with OpenStreetMap, keeping stable GERS ids and per-source attribution.',
-      getDateLabel: onDate(2026, 6),
-    },
-    {
-      icon: mdiBusMultiple,
-      title: 'Transit route options',
-      description: 'Preferences, fewer-transfers / less-walking, and a Deutschlandticket filter.',
-      getDateLabel: onDate(2026, 6),
-    },
-    {
-      icon: mdiMapSearchOutline,
-      title: 'Search along route',
-      description: 'Find charging stations, restaurants, and other stops along the active navigation path and add them without losing the route.',
-      getDateLabel: onDate(2026, 6),
-    },
-    {
-      icon: mdiNavigationVariantOutline,
-      title: 'Live navigation',
-      description: 'Turn-by-turn guidance with speed-adaptive voice prompts and automatic rerouting.',
-      getDateLabel: onDate(2026, 6),
-    },
-    {
-      icon: mdiWifiOff,
-      title: 'Offline maps',
-      description: 'Download regions and zoom levels for offline vector maps, with background progress and optional recent place, route, and search caching.',
-      getDateLabel: onDate(2026, 5),
-    },
-    {
-      icon: mdiBedOutline,
-      title: 'Hotels, menus & delivery',
-      description: 'Compare booking sites with optional live rates, open restaurant menus, and hand off to delivery platforms.',
-      getDateLabel: onDate(2026, 5),
-    },
-    {
-      icon: mdiAirplaneTakeoff,
-      title: 'Flights in directions',
-      description: 'Nearest-airport prefill, an on-map great-circle preview, and privacy-explicit deep links to external flight search.',
-      getDateLabel: onDate(2026, 5),
-    },
-    {
-      icon: mdiCompassOutline,
-      title: 'Explore & nearby',
-      description: 'A unified explore experience.',
-      getDateLabel: onDate(2026, 5),
-    },
-    {
-      icon: mdiBusMultiple,
-      title: 'MOTIS-first transit',
-      description: 'Real-time, multi-modal public transit on open GTFS feeds.',
-      getDateLabel: onDate(2026, 5),
-    },
-    {
-      icon: mdiStarOutline,
-      title: 'Reviews',
-      description: 'Open, signed and portable reviews via Mangrove.',
-      getDateLabel: onDate(2026, 4),
-    },
-    {
-      icon: mdiPalette,
-      title: 'Custom map style',
-      description: 'A polished OpenMapX style for self-hosted OpenMapTiles-compatible vector data.',
-      getDateLabel: onDate(2026, 3),
-    },
-    {
-      icon: mdiTranslate,
-      title: 'Internationalization',
-      description: 'Fully localized UI and map labels (English and German).',
-      getDateLabel: onDate(2026, 3),
-    },
-    {
-      icon: mdiEvStation,
-      title: 'Mobility data sources',
-      description: 'EV charging, parking, and bike-, car- and scooter-sharing.',
-      getDateLabel: onDate(2026, 3),
-    },
-    {
-      icon: mdiImageMultipleOutline,
-      title: 'Street-level imagery',
-      description: 'Explore at eye level with open Mapillary imagery.',
-      getDateLabel: onDate(2026, 2),
-    },
-    {
-      icon: mdiLayersOutline,
-      title: 'Map layers',
-      description: 'Satellite, terrain, traffic, and transit overlays.',
-      getDateLabel: onDate(2026, 1),
-    },
-    {
-      icon: mdiDirections,
-      title: 'Routing',
-      description: 'Driving, motorcycle, cycling and walking directions (OSRM / Valhalla).',
-      getDateLabel: onDate(2026, 1),
-    },
-    {
-      icon: mdiMapMarkerOutline,
-      title: 'Place details',
-      description: 'Rich place panels with hours, photos and info.',
-      getDateLabel: onDate(2025, 12),
-    },
-    {
-      icon: mdiMapSearchOutline,
-      title: 'Search & geocoding',
-      description: 'Autocomplete and geocoding across open datasets.',
-      getDateLabel: onDate(2025, 12),
-    },
-    {
-      icon: mdiMap,
-      title: 'Map rendering',
-      description: 'Fast vector maps with MapLibre GL.',
-      getDateLabel: onDate(2025, 11),
+      icon: mdiMapMarkerOutline, title: 'Restaurant reservations',
+      description: 'Add links from restaurant details to supported table-reservation services.',
+      done: false, getDateLabel: label('Idea'),
     },
   ];
 
   const pageMetadata = {
     title: 'Roadmap',
-    description: "What we've shipped, what's in progress, and what's coming next for OpenMapX.",
+    description: 'What OpenMapX supports, what is in development, and ideas for future work.',
   };
 </script>
 
@@ -379,7 +111,33 @@
   <Stack>
     <Heading size="title" tag="h1">{pageMetadata.title}</Heading>
     <Text>{pageMetadata.description}</Text>
+    <Text>
+      OpenMapX is experimental. Implementation does not mean every feature is enabled on the public instance
+      or tested on every device. Priorities can change, and there are no release dates promised here.
+      Follow the <Link href={Socials.Github}>source repository</Link> for current development.
+    </Text>
   </Stack>
 
-  <Timeline {items} />
+  <section>
+    <Heading size="large" tag="h2">In the project today</Heading>
+    <Text class="mb-4">The <Link href="/features">feature guide</Link> describes capabilities, coverage, and dependencies.</Text>
+    <Timeline items={implemented} />
+  </section>
+
+  <section>
+    <Heading size="large" tag="h2" class="mb-4">In development</Heading>
+    <Timeline items={development} />
+  </section>
+
+  <section>
+    <Heading size="large" tag="h2">Ideas for later</Heading>
+    <Text class="mb-4">These are possible directions, with no fixed scope, order, or delivery commitment.</Text>
+    <Timeline items={ideas} />
+  </section>
+
+  <Text>
+    Have a problem to solve or a feature to propose? <Link href={Socials.Issues}>Open an issue</Link>
+    with the place, journey, or workflow involved. If you want to help build it, read the
+    <Link href={Socials.Contributing}>contribution guide</Link>.
+  </Text>
 </Stack>

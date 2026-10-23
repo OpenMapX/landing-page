@@ -1,15 +1,15 @@
 ---
 layout: LegalPage
-title: Legal Notice
+title: Legal notice
 description: Provider information for the OpenMapX website pursuant to § 5 DDG.
-updatedAt: 2026-06-09
+updatedAt: 2026-10-23
 ---
 
 <script>
   import { legalConfig } from '$lib/legalConfig';
 </script>
 
-### Provider
+## Provider
 
 Information pursuant to § 5 of the German Digital Services Act (Digitale-Dienste-Gesetz, DDG):
 
@@ -18,21 +18,21 @@ Information pursuant to § 5 of the German Digital Services Act (Digitale-Dienst
 {legalConfig.postalCode} {legalConfig.city}\
 {legalConfig.country}
 
-### Contact
+## Contact
 
 Email: <a href="mailto:{legalConfig.email}">{legalConfig.email}</a>
 
-### Responsible for Content
+## Responsible for content
 
 Responsible for the content of this website pursuant to § 18(2) of the German State Media Treaty (Medienstaatsvertrag, MStV):
 
 {legalConfig.responsible}\
 (address as above)
 
-### Liability for Links
+## Links to other websites
 
-This website contains links to external third-party websites over whose content we have no influence. We therefore cannot accept any liability for that external content. Responsibility for the content of linked pages always lies with their respective providers or operators.
+This site links to websites run by other operators. Those operators are responsible for their content. A link does not imply a partnership or endorsement.
 
-### Privacy
+## Privacy
 
 For information on how this website handles personal data, see our [Privacy Policy](/privacy-policy).
