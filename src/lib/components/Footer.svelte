@@ -96,7 +96,7 @@
         </div>
 
         <Text size="small" class="text-muted text-center">
-          Website adapted from <Link
+          Website design gratefully adapted from <Link
             href="https://github.com/immich-app/static-pages"
             target="_blank"
             rel="noopener noreferrer">Immich</Link
